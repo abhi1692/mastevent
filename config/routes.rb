@@ -10,9 +10,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'home_page#index'
-   get 'user/login' => 'user#login'
-   get 'user/signup' =>'user#signup'
+   post 'login' => 'user#login'
+   get 'signup' =>'user#signup'
    post 'event_info' =>'user#event_info'
+   post 'save_user_event_info' =>'user#save_event_info'
 
    #root 'events#index'
    #post 'post_success' =>'event/post_success'
