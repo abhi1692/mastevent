@@ -1,0 +1,77 @@
+<html>
+        <div align="center">
+            <h2>User Registration</h2>
+        </div>
+    <body >
+        
+        <div align="center">
+            <table style="height: 50%;" border="0" cellpadding="0" cellspacing="0">
+
+        
+            
+            <form method='post' action='event_info'>
+                
+                <tr>
+                <td width="100"> First Name*:</td>
+                <td><input type="text" name="firstname"  /></td>
+                </tr>        
+                
+                <tr>
+                <td width="100">Last Name</td>
+                <td><input type="text" name="lastname" /></td>
+                </tr>
+                
+                <tr>
+                <td width="100">Date of Birth *:</td>
+                <td><input type="date" name="dob" /></td><br><br>
+                </tr>
+
+                <tr> 
+                <td width="100">Email *:</td>    
+                <td><input type="email" name="email"/></td><br><br>
+                <tr>
+
+                <tr>
+                <td width="100">Mobile No.</td>
+                <td><input type="tel" name="tel" /></td><br><br>
+
+                </tr>
+
+
+                 <tr>   
+                <td width="100">Address *:</td>  
+                <td><input type="text" name="add" /></td><br><br>
+                </tr>
+
+                <tr>
+                <td width="100">Post Code/ Pincode *:</td>    
+                <td><input type="text" name="ptc" /></td><br><br>
+                </tr>
+
+                 <tr>   
+                <td width="100"></td>
+                <td><input type="submit" value="Next" /><td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <form enctype="multipart/form-data" action="uploader.php" method="POST">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+                        Choose a file to upload: <input name="uploadedfile" type="file" /><br />
+                        <input type="submit" value="Upload File" />
+                        </form>
+                    </td>
+                </tr>
+
+        </form>
+    </table>
+    <p>Note: Please make sure your details are correct before submitting form and that all fields marked with * are completed!.</p>
+ 
+     </div>
+        
+    
+
+        
+
+    </body>
+</html>
