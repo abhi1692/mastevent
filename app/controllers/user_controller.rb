@@ -20,6 +20,12 @@ class UserController < ApplicationController
 	def signup
 	end
 
+	def success_user_event_info
+    	user_event_info = UserEventInfo.new
+    	binding.pry
+    	@user_event_info = user_event_info.update_user_event_info(params)
+    end
+
 	def more_signup
 		user= User.where(:email => params[:email]).first
 		@user= user.more_update(params)
@@ -28,10 +34,12 @@ class UserController < ApplicationController
 	def event_info
 		#binding.pry
 		user = User.new
-		@user = user.create_update(params)
+
+		@user = user.update_user(params)
 	end
 
-	def save_event_info
+	def user_event_info
+
 		# create migration for user_events
 		# create model for user_events
 		# save in user_events

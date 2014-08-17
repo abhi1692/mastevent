@@ -6,7 +6,7 @@
         <div align="center">
             <table border="0" cellpadding="0" cellspacing="0">
           
-                <form method='post' action='save_user_event_info'>
+                <form method='post' action='success_user_event_info'>
                       
                     <tr>
                         <td width="100">Address:</td>
@@ -18,14 +18,14 @@
                         <td width="100">Event Exprience*<br>(Number of Events you have Done) :</td>
                                 
                         <td>
-                            <select>
+                            <select name="event_exp">
                                 <option value="0">0</option>
                                 <option value="less than 5">less than 5</option>
                                 <option value="less than 10">less than 10</option>
                                 <option value="greater than 10">greater than 10</option>
                                 <br><br>
                             </select>
-                            <name="event_exp"/>
+                            
                            
                         </td>
 
@@ -74,9 +74,9 @@
                     <tr>
                         <td width="100">Suitable Time*:</td>
                         <td>
-                            From:<input type="time" name="suitable_time" >
+                            From:<input type="time" name="suitable_time_from" >
                                 
-                            To:<input type="time" name="suitable_time" >
+                            To:<input type="time" name="suitable_time_to" >
                                 
                                 <br><br>      
                         </td>
@@ -86,7 +86,7 @@
                     <tr>
                         <td width*="100">Do You Have Bike:</td>
                         <td>
-                            <input type="radio" name="vehicle" value="no">Yes 
+                            <input type="radio" name="vehicle" value="yes">Yes 
                             <input type="radio" name="vehicle" value="no">No 
                              <br><br>
                         </td>

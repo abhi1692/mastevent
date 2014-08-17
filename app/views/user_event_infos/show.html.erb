@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user_event_info.address %>
+</p>
+
+<p>
+  <strong>Event exprience:</strong>
+  <%= @user_event_info.event_exprience %>
+</p>
+
+<p>
+  <strong>Preferred location:</strong>
+  <%= @user_event_info.preferred_location %>
+</p>
+
+<p>
+  <strong>Suitable day:</strong>
+  <%= @user_event_info.suitable_day %>
+</p>
+
+<p>
+  <strong>Suitable time:</strong>
+  <%= @user_event_info.suitable_time %>
+</p>
+
+<p>
+  <strong>Bike:</strong>
+  <%= @user_event_info.bike %>
+</p>
+
+<p>
+  <strong>Qualification:</strong>
+  <%= @user_event_info.qualification %>
+</p>
+
+<%= link_to 'Edit', edit_user_event_info_path(@user_event_info) %> |
+<%= link_to 'Back', user_event_infos_path %>

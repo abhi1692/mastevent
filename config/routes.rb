@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :user_event_infos
+
+  resources :user_infos
+
   resources :events
 
   #resources :microposts
@@ -13,7 +17,7 @@ Rails.application.routes.draw do
    post 'login' => 'user#login'
    get 'signup' =>'user#signup'
    post 'event_info' =>'user#event_info'
-   post 'save_user_event_info' =>'user#save_event_info'
+   post 'success_user_event_info' =>'user#success_user_event_info'
 
    #root 'events#index'
    #post 'post_success' =>'event/post_success'
