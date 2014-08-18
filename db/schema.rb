@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817162339) do
+ActiveRecord::Schema.define(version: 20140818115118) do
 
   create_table "events", force: true do |t|
     t.string   "event_name",           limit: 100
@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20140817162339) do
   end
 
   create_table "user_event_infos", force: true do |t|
-    t.string   "address",            limit: 50
-    t.string   "event_exprience",    limit: 50
-    t.string   "preferred_location", limit: 50
-    t.string   "suitable_day",       limit: 50
+    t.string   "address",            limit: 100
+    t.string   "event_exprience",    limit: 100
+    t.string   "preferred_location", limit: 100
+    t.string   "suitable_day",       limit: 100
     t.boolean  "bike"
-    t.string   "qualification",      limit: 50
+    t.string   "qualification",      limit: 100
     t.datetime "created_at"
     t.datetime "updated_at"
     t.time     "suitable_time_from"
