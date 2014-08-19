@@ -10,9 +10,8 @@ class UserController < ApplicationController
 	def login
 		usr = User.where(:email => params[:email], :password => params[:password]).first
 		if usr.present?
-			@login_status = "success"
-		else
-			@login_status = "failure"	
+			usr.user_homepage
+		
 		end		
 
 	end
@@ -22,7 +21,7 @@ class UserController < ApplicationController
 
 	def success_user_event_info
     	user_event_info = UserEventInfo.new
-    	binding.pry
+    	
     	@user_event_info = user_event_info.update_user_event_info(params)
     end
 
