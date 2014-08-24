@@ -4,32 +4,26 @@
 	</head>
 	<body>
 		<table border="0" cellpadding="0" cellspacing="0">
-	<?php
-	// Connect to database server
-	mysql_connect("mysql.myhost.com", "root", "root") or die (mysql_error ());
 
-	// Select database
-	mysql_select_db("mastevent_development") or die(mysql_error());
+			<% if @events.present? %>
 
-	// SQL query
-	$strSQL = "SELECT * FROM users";
+<%@events.each do |event|%><br>
+<tr><%=event.event_name%></tr>
 
-	// Execute the query (the recordset $rs contains the result)
-	$rs = mysql_query($strSQL);
+<tr><%= @not_success%></tr>
+
+
+
+<%end%>
+<%else%>
+
+<%=@not_success%>
+
+<%end%>
 	
-	// Loop the recordset $rs
-	// Each row will be made into an array ($row) using mysql_fetch_array
-	while($row = mysql_fetch_array($rs)) {
 
-	   // Write the value of the column FirstName (which is now in the array $row)
-	  echo $row['event_name','date_of_event','coordinator_required','pay_per_day'] . "<br />";
-
-	  }
-
-	// Close the database connection
-	mysql_close();
-	?>
+	
 	</table>
 	</body>
-	</html>
+</html>
 	

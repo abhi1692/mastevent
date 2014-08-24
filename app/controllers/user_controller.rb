@@ -9,10 +9,16 @@ class UserController < ApplicationController
 
 	def login
 		usr = User.where(:email => params[:email], :password => params[:password]).first
-		if usr.present?
-			usr.user_homepage
 		
-		end		
+				@events = []
+			if usr.present?
+					@events = Event.all
+
+		else
+			@not_success="Username and password not matched"
+
+		
+	end		
 
 	end
 
