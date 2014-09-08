@@ -15,7 +15,6 @@ default: &default
   pool: 5
   username: root
   password: root
-  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
@@ -48,7 +47,11 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: pg
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
   database: mastevent_production
   username: mastevent
   password: <%= ENV['MASTEVENT_DATABASE_PASSWORD'] %>
