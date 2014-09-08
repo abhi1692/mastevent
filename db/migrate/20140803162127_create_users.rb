@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :firstname, :limit => 20
       t.string :lastname, :limit => 20
 
-      #t.string :username, :limit => 20
+      t.string :username, :limit => 20
       t.timestamps
     end
     add_index :users, :email, :unique => true
