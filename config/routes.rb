@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'home_page#index'
+   root 'event#index'
    post 'login' => 'user#login'
    get 'signup' =>'user#signup'
    post 'event_info' =>'user#event_info'

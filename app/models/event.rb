@@ -9,5 +9,10 @@ class Event < ActiveRecord::Base
 		event_obj.pay_per_day = params[:pay_per_day]
 		event_obj.save!
 		
-	end
+  end
+
+  def self.get_events
+    Event.all
+  end
+
 end

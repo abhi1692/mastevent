@@ -2,12 +2,12 @@ class EventController < ApplicationController
 	skip_before_action :verify_authenticity_token
 
 	def index
+    @events = Event.get_events
+  end
 
-
-	end	
 	def post_success
 	 
-	 end
+	end
 
 	def post_event
 		event = Event.new
