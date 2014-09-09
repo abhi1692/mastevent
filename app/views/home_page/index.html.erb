@@ -1,10 +1,44 @@
-<h1><%= @mastevent_motto%></h1>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
 
+<h1 id="para2">MAST EVENT</h1>
+<h1 id="para1"><%= @mastevent_motto%></h1>
 
+<style>
+#para1 {
+    text-align: center;
+    color: red;
+    background-color: #FFFF00;
+    text-decoration: underline;
+    text-transform: uppercase;
+    line-height: 200%;
+    display: inline;
 
+}
+
+#para2 {
+    text-align: left;
+    color: #0101DF;
+    font-size: 50px;
+    display: inline;
+
+    
+}
+
+#para3 {
+    text-align: right;
+    color: #000000;
+    	}
+   
+   body{
+   	background-color: #9F81F7;
+   	background-image: url("/images/back.jpg");
+   	background-repeat: no-repeat;
+   }
+
+</style>
 
 <div align="right">
-<form method='post' action='login'>	
+<form  method='post' action='login'>	
 Email/User name *: <input type="text" name="email" /><br>
  Password *: <input type="Password" name="password" /><br><br>
 
@@ -12,7 +46,7 @@ Email/User name *: <input type="text" name="email" /><br>
 </form>
 </div>
 
- <a href='/signup'>Click To Signup</a>
+ <a id="para3" href='/signup'><p id="para3"> Click To Signup</p></a>
 
 <!--
 <br><br>

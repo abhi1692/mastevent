@@ -1,0 +1,33 @@
+<style>
+#para1 {
+    text-align: center;
+    color: red;
+    background-color: #FFFF00;
+    text-decoration: underline;
+    text-transform: uppercase;
+    line-height: 200%;
+    display: inline;
+
+}
+
+#para2 {
+    text-align: left;
+    color: #0101DF;
+    font-size: 50px;
+    display: inline;
+
+    
+}
+
+#para3 {
+    text-align: right;
+    color: #000000;
+    	}
+   
+   body{
+   	background-color: #9F81F7;
+   	background-image: url("/images/back.jpg");
+   	background-repeat: no-repeat;
+   }
+
+</style>
