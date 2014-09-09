@@ -5,6 +5,14 @@ class EventController < ApplicationController
     @events = Event.get_events
   end
 
+  def apply
+
+  end
+
+  def event_apply
+    @obj = UserEventInfo.create_update(params)
+  end
+
 	def post_success
 	 
 	end
