@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.2'
 # Use mysql as the database for Active Record
 gem 'mysql2', '0.3.16', group: :development
-#gem 'pg', '0.17.1', group: :production
+gem 'pg', '0.17.1', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', ' 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
