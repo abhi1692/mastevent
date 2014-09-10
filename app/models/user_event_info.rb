@@ -10,6 +10,7 @@ class UserEventInfo < ActiveRecord::Base
 		user_event_info_obj.suitable_time_to = params[:suitable_time_to]
 		user_event_info_obj.bike=params[:vehicle]
 		user_event_info_obj.qualification= params[:qualification]
+        user_event_info_obj.name= params[:name]
 		user_event_info_obj.save!
 		
   end
@@ -27,6 +28,7 @@ class UserEventInfo < ActiveRecord::Base
     user_event_info_obj.bike = params[:vehicle]
     user_event_info_obj.qualification= (params[:qualification] || []).join(', ').to_s
     user_event_info_obj.more_details= params[:more_details]
+     user_event_info_obj.name= params[:name]
     user_event_info_obj.save!
     user_event_info_obj
   end

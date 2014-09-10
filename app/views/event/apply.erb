@@ -8,23 +8,7 @@
      
         <form method='post' action='/event_apply' class="register">
             <h1>Join This Event</h1>
-            <fieldset class="row1">
-                <legend>Account Details
-                </legend>
-                <p>
-                    <label>Email *
-                    </label>
-                    <input type="text" name="email"/>
-                    
-                </p>
-                <p>
-                    <label>Password*
-                    </label>
-                    <input type="text"/>
-                    
-                    
-                </p>
-            </fieldset>
+            
             <fieldset class="row2">
                 <legend>Personal Details
                 </legend>
@@ -185,9 +169,7 @@
                     </select>
                 </p>
                 
-                <div class="infobox"><h4>Helpful Information</h4>
-                    <p>Please register .</p>
-                </div>
+               
             </fieldset>
 
 
@@ -230,9 +212,11 @@
                 <p>
                     <label> Suitable Time *
                     </label>
-                    
-                    <input type="text" class="long" name="suitable_time_from"/>e.g 9Am to 5Pm
-
+                    <label>
+                    From:</label>
+                    <input type="time" name="suitable_time_from" >
+                     <label>To:</label>           
+                    <input type="time" name="suitable_time_to" >
                                    
                 </p>
                 <p>
