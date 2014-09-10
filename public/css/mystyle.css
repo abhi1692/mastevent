@@ -1,11 +1,9 @@
 <style>
 #para1 {
-    text-align: center;
-    color: red;
-    background-color: #FFFF00;
-    text-decoration: underline;
-    text-transform: uppercase;
-    line-height: 200%;
+    text-align: right;
+    color: black;
+    font-size: 25px;
+    
     display: inline;
 
 }
@@ -13,21 +11,40 @@
 #para2 {
     text-align: left;
     color: #0101DF;
-    font-size: 50px;
+    font-size: 40px;
     display: inline;
 
     
 }
 
-#para3 {
-    text-align: right;
-    color: #000000;
-    	}
+
+#para3{
+    text-align: center;
+    color: #0101DF;
+    font-size: 20px;
+    font-family: "Helvetica", sans-serif
+
+}
+
+#para4{
+  text-align: center;
+  color: blue;
+  font-size: 15px;
+  font-family: "Times New Roman", Georgia, Serif;
+}
+
+#para5{
+  text-align: center;
+  color: #DF013A;
+  font-size: 15px;
+  font-family: "Times New Roman", Georgia, Serif;
+}
+
    
    body{
-   	background-color: #9F81F7;
-   	background-image: url("/images/back.jpg");
-   	background-repeat: no-repeat;
+   	
+   	background-image: url("/images/wall2.jpg");
+   	background-repeat: repeat;
    }
 
 </style>

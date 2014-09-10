@@ -1,9 +1,18 @@
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+ 
+<h1 id="para2">MAST EVENT</h1>
+<h1 id="para1">Join Events And Get Paid</h1>
+
+
 <%@events.each do |e|%>
     <div>
-        <%=e.event_name%><br/>
-        Starting On:<%=e.event_start_date%><br/>
-        Payement Per Day:<%=e.pay_per_day%><br/>
-      <a href="/apply/<%=e.id%>">Join Event</a>
+      <h2 id="para3"><%=e.event_name%></h2><br/>
+       <p id="para4">Starting On:<%=e.event_start_date%><br/></p>
+       <p  id="para4">Payement Per Day:<%=e.pay_per_day%><br/></p>
+       <p  id="para4">Event location:<%=e.location%><br/></p>
+       <p  id="para4">Coordinator Required:<%=e.coordinator_required%><br/></p>
+
+     <a id="para5"  href="/apply/<%=e.id%>">Join Event</a>
     </div>
     <hr/>
 <%end%>
