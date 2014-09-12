@@ -28,8 +28,13 @@ class UserEventInfo < ActiveRecord::Base
     user_event_info_obj.bike = params[:vehicle]
     user_event_info_obj.qualification= (params[:qualification] || []).join(', ').to_s
     user_event_info_obj.more_details= params[:more_details]
-     user_event_info_obj.name= params[:name]
+    user_event_info_obj.name= params[:name]
+    user_event_info_obj.event_id = params[:event_id]
     user_event_info_obj.save!
     user_event_info_obj
+  end
+
+  def self.get_applicants(params)
+    where(:event_id => params[:id]).all
   end
 end

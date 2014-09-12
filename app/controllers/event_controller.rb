@@ -24,9 +24,15 @@ class EventController < ApplicationController
 
 	
 	def post_success
-   		event = Event.new
+   	event = Event.new
 		@event = event.post_event(params)
-	end
+  end
+
+  def applicant
+    params[:id] = params[:id].to_i
+    return to root if params[:id].to_i < 1
+    @applicants = UserEventInfo.get_applicants(params)
+  end
 
 
 
