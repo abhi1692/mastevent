@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140912192209) do
+ActiveRecord::Schema.define(version: 20140909191406) do
 
   create_table "events", force: true do |t|
     t.string   "event_name",           limit: 100
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20140912192209) do
     t.string   "location"
     t.text     "description"
     t.string   "time"
-    t.boolean  "status",                                                    default: true
   end
 
   create_table "user_event_infos", force: true do |t|
@@ -41,7 +40,6 @@ ActiveRecord::Schema.define(version: 20140912192209) do
     t.string   "email"
     t.string   "name"
     t.text     "more_details"
-    t.integer  "event_id"
   end
 
   create_table "users", force: true do |t|
@@ -49,7 +47,6 @@ ActiveRecord::Schema.define(version: 20140912192209) do
     t.string   "mobile_number", limit: 11
     t.string   "firstname",     limit: 20
     t.string   "lastname",      limit: 20
-    t.string   "username",      limit: 20
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password",      limit: 20
@@ -59,6 +56,5 @@ ActiveRecord::Schema.define(version: 20140912192209) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
