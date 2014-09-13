@@ -12,7 +12,7 @@ class Event < ActiveRecord::Base
   end
 
   def self.get_events
-    Event.all
+    Event.all.where(:status => true).all
   end
 
 end

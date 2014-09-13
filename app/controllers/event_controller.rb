@@ -2,7 +2,7 @@ class EventController < ApplicationController
 	skip_before_action :verify_authenticity_token
 
 	def index
-    @events = Event.get_events
+    @events = Event.get_events.where(:status => true).all
   end
 
   def apply
