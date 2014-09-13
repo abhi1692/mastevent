@@ -1,0 +1,18 @@
+<% if @applicants.present? %>
+<% @applicants.each do |ap| %>
+ <div>
+    Name: <%=ap.name%> <br/>
+    Email: <%=ap.email%> <br/>
+    Phone No: <%=ap.phone_no%> <br/>
+    Address: <%=ap.address%> <br/>
+    Event Experience: <%=ap.event_exprience%> <br/>
+    Preferred Location: <%=ap.preferred_location%> <br/>
+    Suitable Day: <%=ap.suitable_day%> <br/>
+    Suitable Time: <%=ap.suitable_time_from%> - <%=ap.suitable_time_to%> <br/>
+    Bike: <%=ap.bike%> <br/>
+    Qualification: <%=ap.qualification%> <br/>
+    More Details: <%=ap.more_details%> <br/>
+ </div><hr/>
+
+<%end%>
+<%end%>
