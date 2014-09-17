@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   # Below routes are not used
    post 'login' => 'user#login'
+   post 'event' =>'event/about'
    get 'signup' =>'user#signup'
    post 'event_info' =>'user#event_info'
    post 'success_user_event_info' =>'user#success_user_event_info'
