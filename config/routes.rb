@@ -16,7 +16,7 @@ Rails.application.routes.draw do
    root 'event#index'
    get 'apply/:id' => 'event#apply'
    post 'event_apply' => 'event#event_apply'
-   get 'contact' =>'home_page#contact'
+   get 'about' =>'event#about'
    get 'applicant/:id' => 'event#applicant'
 
   # Below routes are not used

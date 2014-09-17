@@ -34,6 +34,10 @@ class EventController < ApplicationController
     @applicants = UserEventInfo.get_applicants(params)
   end
 
+  def about
+
+  end
+
 
 
 		
