@@ -8,6 +8,15 @@
 
 }
 
+#para6 {
+    
+    color: blue;
+    font-size: 25px;
+    
+    
+
+}
+
 #para2 {
     text-align: left;
     color: #0101DF;
@@ -43,17 +52,20 @@
 #menu {
   width: 1020px;
   height: 30px;
+  display: inline;
  
 }
 
 #menu li {
   float: right ;
+  
 }
 
 #menu ul {
   list-style-type:none;
   margin:0;
   padding:0;
+  display: inline;
 }
 
 #menu a {
@@ -68,14 +80,22 @@
 
 #menu a:hover {
   background: none;
+  display: inline;
 }
 
    
    body{
    	
-   	background-image: url("/images/wall2.jpg");
+   	background-image: url("/images/wall1.jpg");
    	background-repeat: repeat;
    }
+
+   #content {
+  width: 980px;
+  background-color: none;
+
+  padding: 20px;
+}
 
 
    

@@ -1,15 +1,17 @@
-body { 
-	margin : 0;
+
+body{
+   	
+   	margin : 0;
 	padding : 0;
 	font-family: "Play","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 14px;
 	line-height: 21px;
-	color: #2d2d2d;
-	background: url(/css/images/about.jpg);
-}
+   	background-image: url("/images/wall1.jpg");
+   	background-repeat: repeat;
+   }
 
 h1 {
-	color: #ffffff;
+	color: blue;
 }
 
 h2 {
@@ -26,32 +28,29 @@ a {
 	margin: 20px auto;
 }
 
-#header {
-	width: 980px;
-	height: 40px;
-	background-color: #89debd;
-	padding: 20px;
-}
+
 
 #menu {
 	width: 1020px;
 	height: 30px;
+	display: inline;
 	background-color: #a3dfc8;
 }
 
 #menu li {
-	float: left;
+	float: right;
 }
 
 #menu ul {
 	list-style-type:none;
 	margin:0;
 	padding:0;
+	 display: inline;
 }
 
 #menu a {
 	display: block;
-	color: #ffffff;
+	color: blue;
 	text-decoration: none;
 	padding: 4px 15px;
 	font-size: 14px;
@@ -76,3 +75,9 @@ a {
 	padding: 15px;
 	text-align: center;
 }
+
+#para2 {
+    text-align: left;
+    color: #0101DF;
+    font-size: 40px;
+    display: inline;
