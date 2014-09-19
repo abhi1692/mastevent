@@ -18,23 +18,9 @@ Rails.application.routes.draw do
    post 'event_apply' => 'event#event_apply'
    get 'about' =>'event#about'
    get 'applicant/:id' => 'event#applicant'
-
-  # Below routes are not used
-   post 'login' => 'user#login'
-   post 'event' =>'event/about'
-   get 'signup' =>'user#signup'
-   post 'event_info' =>'user#event_info'
-   post 'success_user_event_info' =>'user#success_user_event_info'
-
-   #root 'events#index'
-   #post 'post_success' =>'event/post_success'
-   get 'post_event' =>'event#post_event'
-   post 'post_success'=>'event#post_success'
-
-
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+   get 'event/new' => 'event#new'
+   match 'event/edit/:id' => 'event#edit', via: [:get]
+   post 'event/save' => 'event#save'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
