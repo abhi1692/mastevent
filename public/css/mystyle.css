@@ -1,7 +1,7 @@
 <style>
 #para1 {
     text-align: right;
-    color: black;
+    color: white;
     font-size: 25px;
     
     display: inline;
@@ -37,7 +37,7 @@
 
 #para4{
   text-align: center;
-  color: blue;
+  color: white;
   font-size: 15px;
   font-family: "Times New Roman", Georgia, Serif;
 }
@@ -86,13 +86,14 @@
    
    body{
    	
-   	background-image: url("/images/wall1.jpg");
+   	background-image: url("/images/wall12.jpg");
    	background-repeat: repeat;
    }
 
    #content {
   width: 980px;
   background-color: none;
+  color:white;
 
   padding: 20px;
 }
