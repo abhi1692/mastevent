@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def http_basic_authenticate
       authenticate_or_request_with_http_basic("Hem Administration") do |user, pass|
-        user == 'mast' && pass == 'abhibl0ckN0W'
+        user == 'mast' && pass == 'abhinav'
       end
   end
 

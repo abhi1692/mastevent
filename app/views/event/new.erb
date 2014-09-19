@@ -2,7 +2,7 @@
 <html>
 
 
-<link rel="stylesheet" type="text/css" href="/css/default.css">
+
     <body>
         <div align="center">
             <h2>Post A Event<h2>
@@ -14,29 +14,29 @@
 
               <p>
                 <label> Status :   </label><br/>
-                <input class="long" type="radio" name="status" value="true" <%=@event.status == true ? checked="checked" : "" %>/>True<br>
+                <input  type="radio" name="status" value="true" <%=@event.status == true ? checked="checked" : "" %>/>True<br>
                 <input class="long" type="radio" name="status" value="false" <%=@event.status == false ? checked="checked" : "" %>/>False<br>
               </p>
               <p>
                 <label> Event Name :   </label>
-                <input class="long" type="text" name="eventname" value="<%=@event.event_name%>"/><br>
+                <input  type="text" name="eventname" value="<%=@event.event_name%>"/><br>
                 </p>        
                 
                 <p>
                 <label>Date Of Event :</label>
-                  <input class="long" type="text" name="date_of_event" value="<%=@event.event_start_date%>"/><br>
+                  <input  type="text" name="date_of_event" value="<%=@event.event_start_date%>"/><br>
 
                 </p>
                 
                 <p> 
                 <label>Coordinators Required:</label>
-                    <input class="long" type="text" name="coordinator_required" value="<%=@event.coordinator_required%>"/><br><br>
+                    <input  type="text" name="coordinator_required" value="<%=@event.coordinator_required%>"/><br><br>
                 </p>
 
                 <p>
                 <label>Pay Per Day:</label>
 
-                    <input class="long" type="text" name="pay_per_day" value="<%=@event.pay_per_day%>"/><br>
+                    <input  type="text" name="pay_per_day" value="<%=@event.pay_per_day%>"/><br>
                 </p>
 
                 </p>
