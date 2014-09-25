@@ -18,17 +18,15 @@
 <h1 id="para1">Join Events And Get Paid</h1>
 
 
-<%@events.each do |e|%>
     <div>
-      <h2 id="para3"><%=e.event_name%></h2><br/>
-       <p id="para4">Starting On: <%=e.event_start_date%><br/></p>
-       <p  id="para4">Payment Per Day: <%=e.pay_per_day%><br/></p>
-       <p  id="para4">Event location: <%=e.location%><br/></p>
-       <p  id="para4">Coordinator Required: <%=e.coordinator_required%><br/></p>
-       <p  id="para4">Description: <%=e.description%><br/></p>
+      <h2 id="para3"><%=@event.event_name%></h2><br/>
+       <p id="para4">Starting On: <%=@event.event_start_date%><br/></p>
+       <p  id="para4">Payment Per Day: <%=@event.pay_per_day%><br/></p>
+       <p  id="para4">Event location: <%=@event.location%><br/></p>
+       <p  id="para4">Coordinator Required: <%=@event.coordinator_required%><br/></p>
+       <p  id="para4">Description: <%=@event.description%><br/></p>
 
-      <center><a id="para5" href="/apply/<%=e.id%>" >Join Event</a>
+      <center><a id="para5" href="/apply/<%=@event.id%>" >Join Event</a></center>
     </div>
     <hr/>
-<%end%>
 </html>

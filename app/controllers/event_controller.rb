@@ -39,4 +39,8 @@ class EventController < ApplicationController
 
   end
 
+  def description
+    @event = Event.where(id: params[:id]).first
+  end
+
 end
