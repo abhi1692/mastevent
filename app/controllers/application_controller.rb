@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def http_basic_authenticate
-      authenticate_or_request_with_http_basic("Hem Administration") do |user, pass|
+      authenticate_or_request_with_http_basic("MastEvent Administration") do |user, pass|
         user == 'mast' && pass == 'abhinav'
       end
   end

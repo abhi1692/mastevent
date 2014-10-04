@@ -9,6 +9,7 @@ class Event < ActiveRecord::Base
         event_obj.location = params[:location]
         event_obj.description = params[:description]
         event_obj.status = params[:status] == 'true' ? true : false
+        event_obj.gender =params[:gender]
 		event_obj.save!
   end
 

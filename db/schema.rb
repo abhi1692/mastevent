@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140912192209) do
     t.text     "description"
     t.string   "time"
     t.boolean  "status",                                                    default: true
+    t.string   "gender",               limit: 6
   end
 
   create_table "user_event_infos", force: true do |t|

@@ -20,7 +20,13 @@
               <p>
                 <label> Event Name :   </label>
                 <input  type="text" name="eventname" value="<%=@event.event_name%>"/><br>
-                </p>        
+                </p>  
+
+                <p>
+                <label> gender :   </label><br/>
+                <input  type="radio" name="gender" value="m" <%=@event.gender == 'm' ? checked="checked" : "" %>/>Male<br>
+                <input class="long" type="radio" name="gender" value="f" <%=@event.gender == 'f' ? checked="checked" : "" %>/>Female<br>
+              </p>      
                 
                 <p>
                 <label>Date Of Event :</label>
