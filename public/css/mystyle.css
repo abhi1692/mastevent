@@ -38,7 +38,15 @@
     color: #0101DF;
     font-size: 20px;
     font-family: "Helvetica", sans-serif
+     display: inline;
+}
 
+#para10{
+    text-align: center;
+    color: #0101DF;
+    font-size: 20px;
+    font-family: "Helvetica", sans-serif
+     display: inline;
 }
 
 #para4{

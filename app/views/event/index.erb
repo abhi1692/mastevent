@@ -4,24 +4,32 @@
  <meta name="keyword" content="event,mastevent,mast event" />
 </head>
 <link rel="stylesheet" type="text/css" href="/css/mystyle.css">
-<h1 id="para2"class="padding">MAST EVENT</h1>
+<h1 id="para2">MAST EVENT</h1>
 <div id="menu">
 		<ul>
 			
-			<li><a href="/">Home</a></li>
-			<li><a href="/about">About Us</a></li>
+			<li><a  href="/">Home</a></li>
+			<li><a  href="/about">About Us</a></li>
 			
 		</ul>
-	</div>
+</div>
  
 
 <h1 id="para1">Join Events And Get Paid</h1>
 
 
+  <ul>
+      <li><a id="para10" href="/" style="text-decoration: none">All Events</a></li><br>
+      <li><a id="para10" href="/?et=m " style="text-decoration: none">Events For Boys</a></li><br>
+      <li><a id="para10" href="/?et=f" style="text-decoration: none">Events For Girls</a></li><br>
+      
+  </ul>
+<br/>
 <%@events.each do |e|%>
     <div>
       <h2 id="para3"><%=e.event_name%></h2><br/>
-       <p id="para4">Starting On: <%=e.event_start_date%><br/></p>
+       <p id="para4">Starting On: <%=e.event_start_date.strftime("%d %B %Y")%><br/></p>
+        
        <p  id="para4">Payment Per Day: <%=e.pay_per_day%><br/></p>
        <p  id="para4">Event location: <%=e.location%><br/></p>
        <p  id="para4">Coordinator Required: <%=e.coordinator_required%><br/></p>

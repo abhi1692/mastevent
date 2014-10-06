@@ -3,7 +3,7 @@ class EventController < ApplicationController
   before_action :http_basic_authenticate, :only => [:new, :edit, :save, :applicant]
 
 	def index
-    @events = Event.get_events
+    @events = Event.get_events(params)
   end
 
   def apply

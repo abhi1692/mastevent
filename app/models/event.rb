@@ -10,11 +10,15 @@ class Event < ActiveRecord::Base
         event_obj.description = params[:description]
         event_obj.status = params[:status] == 'true' ? true : false
         event_obj.gender =params[:gender]
+        event_obj.number_of_days =params[:number_of_days]
+        event_obj.event_end_date =params[:event_end_date]
 		event_obj.save!
   end
 
-  def self.get_events
-    Event.all.where(:status => true).all
+  def self.get_events(params)
+    et = ['m', 'f']
+    et = [params[:et]] if params[:et].present?
+    Event.all.where(:status => true, :gender => et).all
   end
 
 end

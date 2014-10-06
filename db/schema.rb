@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20140912192209) do
     t.string   "time"
     t.boolean  "status",                                                    default: true
     t.string   "gender",               limit: 6
+    t.integer  "number_of_days"
+    t.date     "event_end_date"
   end
 
   create_table "user_event_infos", force: true do |t|
