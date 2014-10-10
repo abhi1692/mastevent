@@ -23,6 +23,8 @@ Rails.application.routes.draw do
    match 'event/edit/:id' => 'event#edit', via: [:get]
    post 'event/save' => 'event#save'
 
+   get 'home' => 'home_page#index'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
