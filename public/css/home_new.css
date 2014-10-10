@@ -1,0 +1,60 @@
+<style type="text/css"> 
+body                                                                   /* site bg color    */
+     {
+     margin: 0; 
+     background-color:#FFFAF0;
+    
+     }
+
+ #navbar ul { 
+    margin: 5px; 
+    padding: 2em 10em; 
+    cellspacing: 0;
+    cellpadding: 0;
+    border: 0;
+    list-style-type: none; 
+    background-color: #F5F5F5; 
+     text-align: right; 
+     
+        
+    } 
+
+#navbar ul li {  
+    display: inline;
+    } 
+
+#navbar ul li a { 
+    text-decoration: none; 
+    padding: .3em 1em; 
+    
+    background-color: #008000;
+    display: inline;
+    background: #abda0f url(../img/overlay.png) repeat-x;
+    color: #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    cursor: pointer;
+    
+    font-size:18px;
+    margin:10px;
+   
+    
+    } 
+
+#navbar ul li a:hover { 
+   
+    background-color: #7CFC00; 
+    } 
+
+   #logo{
+    padding: .1em 10em;
+    float: left
+   
+   }
+
+
+
+</style> 
