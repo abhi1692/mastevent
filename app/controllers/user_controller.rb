@@ -4,8 +4,19 @@ class UserController < ApplicationController
 
 
 	def index
+  end
 
-	end	
+  def new
+
+  end
+
+  def signup
+    usr = User.new
+    @result = usr.create_update_user(params)
+    if !@result[:err]
+      redirect_to root_url
+    end
+  end
 
 	def login
 		usr = User.where(:email => params[:email], :password => params[:password]).first
@@ -16,14 +27,11 @@ class UserController < ApplicationController
 
 		else
 			@not_success="Username and password not matched"
-
-		
 	end		
 
 	end
 
-	def signup
-	end
+
 
 	def success_user_event_info
     	user_event_info = UserEventInfo.new

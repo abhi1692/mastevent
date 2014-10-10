@@ -17,6 +17,14 @@
       <user-password>dfd8dfc5dfc5dfde</user-password>
       <libraries />
     </data-source>
+    <data-source source="LOCAL" name="Rails mastevent: production" uuid="bc92cea1-8b92-46fa-aad7-99075a97f418">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:mastevent_production</jdbc-url>
+      <user-name>mastevent</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe7dfebdff9dffedfefdffcdfefdfe4dffedff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
   </component>
 </project>
 

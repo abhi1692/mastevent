@@ -23,7 +23,29 @@ Rails.application.routes.draw do
    match 'event/edit/:id' => 'event#edit', via: [:get]
    post 'event/save' => 'event#save'
 
-   get 'home' => 'home_page#index'
+  resources 'user', as: :user, controller: 'user' do
+    collection do
+      get '/new' => :new
+      post '/signup' => :signup
+    end
+    member do
+      get '/swatches' => :swatches, as: 'swatches'
+      get '/more-collection-products' => 'product#more_collection_products'
+      post '/save-design' => :save_design, as: 'save_design'
+      post '/share-design' => :share_design, as: 'share_design'
+      get '/get-price-and-image' => :get_price_and_image
+    end
+  end
+
+  resources 'home', as: :home, controller: 'home_page' do
+    collection do
+      get '/home' => :index
+    end
+    member do
+      get '/swatches' => :swatches, as: 'swatches'
+      post '/save-design' => :save_design, as: 'save_design'
+    end
+  end
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
