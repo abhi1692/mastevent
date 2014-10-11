@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>Connect Events and Make Money</title>
+  <meta name="description" content="Connect Events and Make Money">
+
+  <%# Canonical URL %>
+  <link rel="canonical" href="" />
+
+  <%# Facebook Open Graph Tags %>
+  <% if !@social_sharing.nil? %>
+      <meta property="og:locale" content="<%= hreflang_for_locale(@page_pref.locale_name) %>" />
+      <meta property="og:title" content="<%= @social_sharing[:facebook][:share_text] %>" />
+      <meta property="og:type" content="<%= @social_sharing[:facebook][:action_obj] %>" />
+      <meta property="og:image" content="<%= @social_sharing[:facebook][:image_url] %>" />
+      <meta property="og:url" content="<%= @social_sharing[:facebook][:share_url] %>" />
+      <meta property="og:site_name" content="<%= @social_sharing[:facebook][:site_name] %>" />
+      <meta property="og:description" content="<%= @social_sharing[:facebook][:share_desc] %>"/>
+      <meta property="fb:app_id" content="<%= GlobalConstant::FACEBOOK_APP_ID %>"/>
+      <meta property="fb:page_id" content="<%= GlobalConstant::PAGE_ID %>" />
+  <% end %>
+
+  <%# Stylesheets %>
+  <%= stylesheet_link_tag    'application', media: 'all', debug: true %>
+
+  <%= csrf_meta_tags %>
+  <%= yield :head_css %>
+</head>
+<body >

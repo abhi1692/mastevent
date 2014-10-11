@@ -6,13 +6,13 @@ Rails.application.routes.draw do
    get 'description/:id' => 'event#description'
    get 'apply/:id' => 'event#apply'
    post 'event_apply' => 'event#event_apply'
-   get 'about' =>'event#about'
+
    get 'applicant/:id' => 'event#applicant'
    get 'event/new' => 'event#new'
    match 'event/edit/:id' => 'event#edit', via: [:get]
    post 'event/save' => 'event#save'
 
-   root 'home_page#index'
+  root 'home_page#index'
 
   resources 'event', as: :event, controller: 'event' do
     collection do
@@ -47,6 +47,8 @@ Rails.application.routes.draw do
       get '/get-price-and-image' => :get_price_and_image
     end
   end
+
+  get 'about' =>'event#about'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
