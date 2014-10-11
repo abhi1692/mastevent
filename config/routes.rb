@@ -1,19 +1,8 @@
 Rails.application.routes.draw do
-  resources :user_event_infos
-
-  resources :user_infos
-
-  resources :events
-
-  #resources :microposts
-
-  #get 'home_page/index'
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'event#index'
+
+
    get 'description/:id' => 'event#description'
    get 'apply/:id' => 'event#apply'
    post 'event_apply' => 'event#event_apply'
@@ -22,6 +11,28 @@ Rails.application.routes.draw do
    get 'event/new' => 'event#new'
    match 'event/edit/:id' => 'event#edit', via: [:get]
    post 'event/save' => 'event#save'
+
+   root 'home_page#index'
+
+  resources 'event', as: :event, controller: 'event' do
+    collection do
+
+    end
+    member do
+      get '/' => :index
+      post '/save-design' => :save_design
+    end
+  end
+
+  resources 'home', as: :home, controller: 'home_page' do
+    collection do
+
+    end
+    member do
+      get '/swatches' => :swatches, as: 'swatches'
+      post '/save-design' => :save_design, as: 'save_design'
+    end
+  end
 
   resources 'user', as: :user, controller: 'user' do
     collection do
@@ -34,16 +45,6 @@ Rails.application.routes.draw do
       post '/save-design' => :save_design, as: 'save_design'
       post '/share-design' => :share_design, as: 'share_design'
       get '/get-price-and-image' => :get_price_and_image
-    end
-  end
-
-  resources 'home', as: :home, controller: 'home_page' do
-    collection do
-      get '/home' => :index
-    end
-    member do
-      get '/swatches' => :swatches, as: 'swatches'
-      post '/save-design' => :save_design, as: 'save_design'
     end
   end
 
