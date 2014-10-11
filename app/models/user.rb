@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  enum user_type: {user: 0, coordinator: 1}
+  enum user_type: {volunteer: 0, coordinator: 1}
 
   PASSWORD_LENGTH = 6
   REGEX_EMAIL = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i

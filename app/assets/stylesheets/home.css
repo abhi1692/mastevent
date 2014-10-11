@@ -1,9 +1,8 @@
 <style type="text/css"> 
 body                                                                   /* site bg color    */
      {
-     margin: 0; 
-     background-color:red;
-
+     margin: 20px; 
+     
      
     
      }
@@ -29,7 +28,8 @@ body                                                                   /* site b
     text-decoration: none; 
     padding: .3em 1em; 
     
-    background-color: #FFE4C4;
+    background-color: #00CC00
+;
     display: inline;
     color: #fff;
     -moz-border-radius: 5px;

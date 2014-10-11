@@ -1,9 +1,9 @@
 <%if @errors.present? %>
-    <ul>
+   <em> <ul style="position:absolute; TOP:80px; LEFT:450px;font-size:15px;font-family:Georgia, Serif;color:red ">
         <%@errors.each do |err|%>
-            <li><%=err%></li>
+            <li ><%=err%></li>
         <%end%>
-    </ul>
+    <em></ul>
 <%end%>
 
 <%= render :partial => "user/shared/signup_form"%>
