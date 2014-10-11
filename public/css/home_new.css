@@ -3,12 +3,17 @@ body                                                                   /* site b
      {
      margin: 0; 
      background-color:#FFFAF0;
+
+     background-image: url("/images/img/event1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 45px 125px ; 
     
      }
 
  #navbar ul { 
     margin: 5px; 
-    padding: 2em 10em; 
+    padding: 2em 14em; 
     cellspacing: 0;
     cellpadding: 0;
     border: 0;
@@ -49,10 +54,14 @@ body                                                                   /* site b
     background-color: #7CFC00; 
     } 
 
-   #logo{
+   #logo { 
     padding: .1em 10em;
     float: left
    
+   }
+
+   #logo:hover{
+    background-color: none;
    }
 
 
