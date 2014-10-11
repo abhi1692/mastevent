@@ -25,6 +25,14 @@
       </tr>
 
       <tr>
+        <td width="100">Signup As:</td>
+        <% User.user_types.each do |k, v| %>
+            <td><input type="radio" name="user_type" value=<%=v%>/><%=k.titlecase%></td><br><br>
+        <%end%>
+
+      </tr>
+
+      <tr>
         <td width="100"></td>
         <td><input type="submit" value="Next" /></td>
       </tr>

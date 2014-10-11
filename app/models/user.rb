@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  enum user_type: {user: 0, coordinator: 1}
+
   PASSWORD_LENGTH = 6
   REGEX_EMAIL = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
 
@@ -11,6 +13,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => REGEX_EMAIL, :multiline => true,
                       :message => "Email is not correct"
   validates_length_of :mobile_number, :is => 10, :message => "Mobile no should be of 10 digits"
+
 
 
   # {:username => "abhay", :email => "abhinav@gmail.com", mobile_number => "3245678912", :password => "abhinav"}
@@ -33,6 +36,7 @@ class User < ActiveRecord::Base
     self.email = params[:email]
     self.password = params[:password]
     self.mobile_number = params[:mobile_number]
+    self.user_type = params[:user_type].to_i
     if !(self.valid?)
       errors = self.errors.messages.values.flatten
     else
