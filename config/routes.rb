@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   end
 
   get 'about' =>'event#about'
+  get 'login' => 'user#login'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
