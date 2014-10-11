@@ -6,8 +6,11 @@ class User < ActiveRecord::Base
   validates :email, presence: true,
             uniqueness: {message: "Email already present"}
 
+  validates :password, presence: true
+
   validates_format_of :email, :with => REGEX_EMAIL, :multiline => true,
                       :message => "Email is not correct"
+  validates_length_of :mobile_number, :is => 10, :message => "Mobile no should be of 10 digits"
 
 
   # {:username => "abhay", :email => "abhinav@gmail.com", mobile_number => "3245678912", :password => "abhinav"}
@@ -31,10 +34,10 @@ class User < ActiveRecord::Base
     self.password = params[:password]
     self.mobile_number = params[:mobile_number]
     if !(self.valid?)
-      errors = self.errors.messages
+      errors = self.errors.messages.values.flatten
     else
       self.save!
     end
-    return {err: errors.present?,  errors:  errors}
+    return {err: errors.present? ? 'err1' : nil,  errors:  errors, usr_obj: self}
   end
 end
