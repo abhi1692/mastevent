@@ -1,0 +1,37 @@
+#footbar ul { 
+   
+    padding: 04em 32.4em;
+    
+    border: 0;
+    list-style-type: none; 
+    background-color:#E0FFFF; 
+    
+    position: absolute;
+    
+    top: 900px;
+     
+        
+    } 
+
+#footbar ul li {  
+    display: inline;
+    } 
+
+#footbar ul li a { 
+    text-decoration: none; 
+   
+    
+    background-color: none;
+    display: inline;
+    
+    
+    font-size:18px;
+    margin:10px;
+   
+    
+    } 
+
+#footbar ul li a:hover { 
+   
+    background-color: none; 
+    }
