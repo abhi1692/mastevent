@@ -1,0 +1,114 @@
+commit 0d0ade45a3757b572ce6eaade04422209e837282
+Author: abhi1692 <kumarabhinav.1692@gmail.com>
+Date:   Sun Oct 12 18:51:59 2014 +0530
+
+    evertything fix
+
+diff --git a/app/assets/stylesheets/footer.css b/app/assets/stylesheets/footer.css
+index 3541a1d..7a7273d 100644
+--- a/app/assets/stylesheets/footer.css
++++ b/app/assets/stylesheets/footer.css
+@@ -4,7 +4,7 @@
+     
+     border: 0;
+     list-style-type: none; 
+-    background-color:#E0FFFF; 
++    background-color:#BABACA; 
+     
+     position: absolute;
+     
+diff --git a/app/views/event/about.html.erb b/app/views/event/about.html.erb
+index 9b63dc5..3b1c1b5 100644
+--- a/app/views/event/about.html.erb
++++ b/app/views/event/about.html.erb
+@@ -7,9 +7,9 @@
+ 	<div id="content">
+ 	<h2>MastEvent</h2>
+ 	
+-	<p>MastEvent is a very good platform for those who wants some extra bucks in their pockets in their free time. In MastEvent You Just have to select event suitable to your time and location,Register for that event and You will get the call from Organisers.No  coordinators in between,So get the full money of your hardwork.</p>
++	<em><p style="font-size:18px">MastEvent is a very good platform for those who wants some extra bucks in their pockets in their free time. In MastEvent You Just have to select event suitable to your time and location,Register for that event and You will get the call from Organisers.No  coordinators in between,So get the full money of your hardwork.</p><em>
+ 
+-	<h3>So Join Event and Get Paid.</h3>
++	<h3>So Join Events and Make Money.</h3>
+ 
+ 
+ 
+diff --git a/app/views/event/description.html.erb b/app/views/event/description.html.erb
+index af8b170..c237070 100644
+--- a/app/views/event/description.html.erb
++++ b/app/views/event/description.html.erb
+@@ -1,21 +1,3 @@
+-<html>
+-<head>
+- <meta name="description" content="Join Events And Get Paid" />
+- <meta name="keyword" content="event,mastevent,mast event" />
+-</head>
+-<link rel="stylesheet" type="text/css" href="/css/mystyle.css">
+-<h1 id="para2">MAST EVENT</h1>
+-<div id="menu">
+-		<ul>
+-			
+-			<li><a href="/">Home</a></li>
+-			<li><a href="/about">About Us</a></li>
+-		
+-		</ul>
+-	</div>
+- 
+-
+-<h1 id="para1">Join Events And Get Paid</h1>
+ 
+ 
+     <br><br><br>
+@@ -23,7 +5,7 @@
+       <h2 id="para7"><%=@event.event_name%></h2><br/>
+        <p id="para8">Starting On: <%=@event.event_start_date%><br/></p>
+        <p id="para8">Ending On: <%=@event.event_end_date.strftime("%d %B %Y")%><br/></p>
+-        <p id="para8">Total Number Of Days: <%=@event.number_of_days%><br/></p>
++        <p id="para8">Total Number Of Event Days: <%=@event.number_of_days%><br/></p>
+        <p  id="para8">Payment Per Day: <%=@event.pay_per_day%><br/></p>
+        <p  id="para8">Event location: <%=@event.location%><br/></p>
+        <p  id="para8">Coordinator Required: <%=@event.coordinator_required%><br/></p>
+@@ -33,4 +15,4 @@
+     </div>
+     <hr/>
+ 
+-</html>
++
+diff --git a/app/views/event/index.erb b/app/views/event/index.erb
+index fc6d6c0..406a7a3 100644
+--- a/app/views/event/index.erb
++++ b/app/views/event/index.erb
+@@ -8,7 +8,7 @@
+        <p  id="para4">Event location: <%=e.location%><br/></p>
+        <p  id="para4">Coordinator Required: <%=e.coordinator_required%><br/></p>
+ 
+-      <center><a id="para5" href="/description/<%=e.id%>" >Full Description</a>
++      <a id="para5" href="/description/<%=e.id%>" >Full Description</a>
+     </div>
+     <hr/>
+ <%end%>
+diff --git a/app/views/home_page/index.erb b/app/views/home_page/index.erb
+index d4456e8..8f9d731 100644
+--- a/app/views/home_page/index.erb
++++ b/app/views/home_page/index.erb
+@@ -1,6 +1,9 @@
+ <em><p style="position:absolute; TOP:90px; LEFT:170px;font-size:30px;font-family:Comic Sans MS, cursive, sans-serif ">Want To Make Money?</p></em>
+ <em><p style="position:absolute; TOP:140px; LEFT:170px;font-size:30px;font-family:Georgia, Serif; ">Join Events And Get Paid!</p></em>
+ 
++<em><p style="position:absolute; TOP:90px; LEFT:720px;color:#A3A3C2;
++ font-size:30px;font-family:Comic Sans MS, cursive, sans-serif ">24x7 Call us (+91) 07507327585</p></em>
++
+ 
+ 
+ <img   src="/images/user_moto.png " style="position:absolute; TOP:280px; LEFT:180px"/>
+diff --git a/app/views/user/signup.erb b/app/views/user/signup.erb
+index b52ad89..0e8e881 100644
+--- a/app/views/user/signup.erb
++++ b/app/views/user/signup.erb
+@@ -1,5 +1,5 @@
+ <%if @errors.present? %>
+-   <em> <ul style="position:absolute; TOP:80px; LEFT:450px;font-size:15px;font-family:Georgia, Serif;color:red ">
++   <em> <ul style="position:absolute; TOP:60px; LEFT:450px;font-size:15px;font-family:Georgia, Serif;color:red ">
+         <%@errors.each do |err|%>
+             <li ><%=err%></li>
+         <%end%>
