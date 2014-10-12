@@ -19,8 +19,17 @@
       </tr>
 
       <tr>
-        <td width="100">Mobile No.</td>
-        <td><input type="tel" name="mobile_number" /></td><br><br>
+        <td width="100">Mobile No *:</td>
+        <td>(91)<input type="tel" name="mobile_number" /></td><br><br>
+
+      </tr>
+
+      <tr>
+        <td width="100">Signup As:</td>
+        <% User.user_types.each do |k, v| %>
+            <td><input type="radio" name="user_type" value=<%=v%>/><%=k.titlecase%></td><br><br>
+        <%end%>
+
       </tr>
 
       <tr>

@@ -12,10 +12,14 @@ class UserController < ApplicationController
 
   def signup
     usr = User.new
-    @result = usr.create_update_user(params)
-    if !@result[:err]
-      redirect_to root_url
+    result = usr.create_update_user(params)
+    if result[:err].blank?
+      @current_user = result[:usr_obj]
+      redirect_to '/event'  # Success
+    else
+      @errors = result[:errors]
     end
+
   end
 
 	def login

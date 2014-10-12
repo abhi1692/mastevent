@@ -1,5 +1,9 @@
 <%if @errors.present? %>
-    <%=@errors.inspect%>
+    <ul>
+        <%@errors.each do |err|%>
+            <li><%=err%></li>
+        <%end%>
+    </ul>
 <%end%>
 
 <%= render :partial => "user/shared/signup_form"%>
