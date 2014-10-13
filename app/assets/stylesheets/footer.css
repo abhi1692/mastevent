@@ -1,7 +1,8 @@
 #footbar ul { 
    
-    padding: 04em 32.4em;
-    
+    width: 1300px;
+    height: 140px;
+    position: bottom;
     border: 0;
     list-style-type: none; 
     background-color:#A3A3A3;
@@ -16,15 +17,18 @@
     } 
 
 #footbar ul li {  
+
     display: inline;
     } 
 
 #footbar ul li a { 
+
+    text-align: center;
     text-decoration: none; 
    
     
     background-color: none;
-    display: inline;
+    display: inline;i
     
     
     font-size:18px;
@@ -33,7 +37,10 @@
     
     } 
 
-#footbar ul li a:hover { 
-   
-    background-color: none; 
-    }
+#footbar p{
+    position:absolute;
+     
+     font-size:15px;
+     font-family:Georgia, Serif;
+}
+
