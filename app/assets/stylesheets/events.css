@@ -17,6 +17,17 @@
     margin-top:80px;
    }
 
+   hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    border-color:orange;
+} 
+
    #event p{
    	
    	  color:blue;
@@ -37,8 +48,9 @@
    }
 
    #event:hover{
-   	border-width: 2px solid;
-   	border-color: orange;
+   	border-width: 3px ;
+   	border-color: #FFA319
+;
    }
 
    div.clickable { /* Containing div must have a position value */
