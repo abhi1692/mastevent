@@ -3,29 +3,27 @@
 
   
 
-  <div style="border-style: solid; border-width: 5px; border-color: #E6E6FF
-;width:600px; height:240px; background-color:#E6E6FF
+  <div id="event"  class="clickable">
 
-;margin-left:80px; margin-right:220px;margin-top:80px">
+     <center><STRONG><p  style="font-size:25px"><%=e.event_name%></p></STRONG></center>
 
-     <STRONG><p style="position:absolute; TOP:160px; LEFT:270px;color:#8C8C8C;font-size:25px;color:#0000FF"><%=e.event_name%></p></STRONG>
+      
 
-      <p style="position:absolute; TOP:200px; LEFT:300px;color:#8C8C8C;font-size:24px;font-style:italic;font-weight: 900;color:black">Starting On: </p>
-      <p style="position:absolute; TOP:205px; LEFT:430px;color:#8C8C8C;font-size:22px"> <%=e.event_start_date.strftime("%d %B %Y")%><br/></p>
+      <STRONG><p style="font-size:18px"> Starting On::  </STRONG><%=e.event_start_date.strftime("%d %B %Y")%></p>
         
        
-      <p  style="position:absolute; TOP:230px; LEFT:300px;color:#8C8C8C;font-size:24px;font-style:italic;font-weight: 900;color:black;">Payment Per Day: </p>
-      <p  style="position:absolute; TOP:233px; LEFT:490px;color:#8C8C8C;font-size:22px;"><%=e.pay_per_day%><br/></p>
+      
+      <strong><p style="font-size:18px" >Payment Per Day:: </strong><%=e.pay_per_day%><br/></p>
 
        
-       <p  style="position:absolute; TOP:260px; LEFT:300px;color:#8C8C8C;font-size:24px;font-style:italic;font-weight: 900;color:black;">Event location: </p>
-       <p  style="position:absolute; TOP:263px; LEFT:460px;color:#8C8C8C;font-size:22px;"><%=e.location%><br/></p>
+       
+      <strong><p style="font-size:18px" >Event location:: </strong><%=e.location%><br/></p>
        
 
-       <p  style="position:absolute; TOP:290px; LEFT:300px;color:#8C8C8C;font-size:24px;font-style:italic;font-weight: 900;color:black;">Coordinator Required: </p>
-       <p  style="position:absolute; TOP:293px; LEFT:535px;color:#8C8C8C;font-size:22px;"><%=e.coordinator_required%><br/></p>
+       
+       <strong><p style="font-size:18px" >Coordinator Required:: </strong><%=e.coordinator_required%><br/></p>
 
-      <a id="p"style="position:absolute; TOP:355px; LEFT:300px;color:#8C8C8C;font-size:22px;text-decoration:none" href="/description/<%=e.id%>" >Full Description</a>
+      <a   href="/description/<%=e.id%>" ><div></div></a>
   </div>
 
 
