@@ -15,6 +15,7 @@ class UserController < ApplicationController
     result = usr.create_update_user(params)
     if result[:err].blank?
       @current_user = result[:usr_obj]
+      set_user_auth_cookies(result)
       redirect_to '/event'  # Success
     else
       @errors = result[:errors]
@@ -60,6 +61,13 @@ class UserController < ApplicationController
 		# create migration for user_events
 		# create model for user_events
 		# save in user_events
-	end
+  end
+
+  def set_user_auth_cookies(params)
+    cookie_key = GlobalConst::USER_COOKIE
+    cookies[cookie_key] = {value: params[cookie_key],
+                           domain: GlobalConst::COOKIE_DOMAIN} if params[cookie_key].present?
+
+  end
 
 end

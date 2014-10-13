@@ -1,6 +1,6 @@
 class EventController < ApplicationController
 	skip_before_action :verify_authenticity_token
-  before_action :http_basic_authenticate, :only => [:new, :edit, :save, :applicant]
+  #before_action :http_basic_authenticate, :only => [:new, :edit, :save, :applicant]
 
 	def index
     @events = Event.get_events(params)

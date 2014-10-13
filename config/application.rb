@@ -8,6 +8,11 @@ Bundler.require(*Rails.groups)
 
 module Mastevent
   class Application < Rails::Application
+
+    config.autoload_paths << "#{config.root}/lib/"
+    config.eager_load_paths << "#{config.root}/lib/"
+    # Load constants first. Don't want to parse the same YML again and again.
+    require_relative '../lib/global_const'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

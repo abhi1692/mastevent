@@ -42,6 +42,8 @@ class User < ActiveRecord::Base
     else
       self.save!
     end
-    return {err: errors.present? ? 'err1' : nil,  errors:  errors, usr_obj: self}
+    cookie_name = GlobalConst::USER_COOKIE
+    return {err: errors.present? ? 'err1' : nil,  errors:  errors, usr_obj: self}.merge!(cookie_name => self.id)
+
   end
 end

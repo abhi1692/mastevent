@@ -7,12 +7,12 @@
       
       <% User.user_types.each do |k, v| %>
         <input type="radio" name="user_type" value=<%=v%> id="id_<%=k%>" class="register-switch-input" <%=v==0 ? "checked": ""%>>
-        <label  class="register-switch-label"><%=k.titlecase%></label>
+        <label for="id_<%=k%>" class="register-switch-label"><%=k.titlecase%></label>
       <%end%>
     </div>
-    <input type="email" class="register-input" placeholder="Email address" name:"email">
+    <input type="email" class="register-input" placeholder="Email address" name="email">
     <input type="password" class="register-input" placeholder="Password" name="password">
-    <input type="tel" class="register-input" placeholder="Mobile Number" name="mobile_number" >
+    <input type="tel" class="register-input" placeholder="Mobile Number(10 digits)" name="mobile_number" >
     <input type="submit" value="Submit" class="register-button">
   </form>
 
