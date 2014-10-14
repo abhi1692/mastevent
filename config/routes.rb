@@ -38,6 +38,9 @@ Rails.application.routes.draw do
     collection do
       get '/new' => :new
       post '/signup' => :signup
+      get '/logout' => :logout
+      get '/login-form' => :login_form
+      post '/login' => :login
     end
     member do
       get '/swatches' => :swatches, as: 'swatches'

@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20141011135603) do
     t.string   "mobile_number", limit: 11
     t.string   "firstname",     limit: 20
     t.string   "lastname",      limit: 20
+    t.string   "username",                             null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password",      limit: 20

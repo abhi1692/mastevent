@@ -7,7 +7,6 @@ class UserController < ApplicationController
   end
 
   def new
-
   end
 
   def signup
@@ -23,18 +22,28 @@ class UserController < ApplicationController
 
   end
 
+  def login_form
+
+  end
+
 	def login
-		usr = User.where(:email => params[:email], :password => params[:password]).first
-		
-				@events = []
-			if usr.present?
-					@events = Event.all
-
-		else
-			@not_success="Username and password not matched"
-	end		
-
+		usr_obj = User.where(:email => params[:email], :password => params[:password]).first
+    if usr_obj.present?
+      @current_user = usr_obj
+      cookie_key = GlobalConst::USER_COOKIE
+      set_user_auth_cookies(cookie_key => usr_obj.id)
+      redirect_to '/event'  # Success
+    else
+      @errors = ["Email/Password doesn't match"]
+    end
 	end
+
+  def logout
+    @current_user = nil
+    cookies.delete GlobalConst::USER_COOKIE, :domain => GlobalConst::COOKIE_DOMAIN
+
+    redirect_to root_url
+  end
 
 
 

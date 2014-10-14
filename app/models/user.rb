@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
     self.password = params[:password]
     self.mobile_number = params[:mobile_number]
     self.user_type = params[:user_type].to_i
+    self.username = params[:email].to_s.split('@').first
     if !(self.valid?)
       errors = self.errors.messages.values.flatten
     else

@@ -1,0 +1,9 @@
+<%if @errors.present? %>
+    <em> <ul style="position:absolute; TOP:60px; LEFT:450px;font-size:15px;font-family:Georgia, Serif;color:red ">
+      <%@errors.each do |err|%>
+          <li ><%=err%></li>
+      <%end%>
+      <em></ul>
+<%end%>
+
+<%= render :partial => "user/shared/login_form"%>
