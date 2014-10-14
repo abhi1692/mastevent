@@ -1,4 +1,4 @@
-<a style="position:absolute; TOP:0px; LEFT:160px; WIDTH:50px; HEIGHT:50px" href="/"><img src="/images/logo.png" width="299" height="95" alt="MastEvent" /></a>
+<a style="position:absolute; TOP:0px; LEFT:160px; WIDTH:50px; HEIGHT:50px" href=<%= @current_user.present? ? '/event': '/'%>><img src="/images/logo.png" width="299" height="95" alt="MastEvent" /></a>
 
 <div id="navbar">
 
@@ -12,6 +12,9 @@
     <% if  @current_user.present? %>
         <li><a href="/event">Welcome <%=@current_user.username%></a></li>
         <li><a href="/user/logout">Logout</a></li>
+        <%if @current_user.user_type == User::INVERTED_USER_TYPE[1] %>
+            <li><a href="/event/new">Post Event</a></li>
+        <%end%>
     <%end%>
 
 

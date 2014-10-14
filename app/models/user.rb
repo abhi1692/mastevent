@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   enum user_type: {volunteer: 0, coordinator: 1}
+  INVERTED_USER_TYPE = User.user_types.invert
 
   PASSWORD_LENGTH = 6
   REGEX_EMAIL = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
