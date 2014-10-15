@@ -28,6 +28,13 @@ class User < ActiveRecord::Base
 		usr_obj.address=params[:add]
 		usr_obj.password = params[:password]
 		usr_obj. postal_code=params[:ptc]
+    usr_obj. alternate_mobile_number=params[:alternate_mobile_number]
+usr_obj. city=params[:city]
+usr_obj.nationality=params[:nationality]
+usr_obj. language=params[:language]
+usr_obj. gender=params[:gender]
+
+
 		usr_obj.save!
 		#return usr_obj
 	end

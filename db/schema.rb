@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141011135603) do
+ActiveRecord::Schema.define(version: 20141015162937) do
 
   create_table "events", force: true do |t|
     t.string   "event_name",           limit: 100
@@ -48,18 +48,22 @@ ActiveRecord::Schema.define(version: 20141011135603) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",         limit: 50
-    t.string   "mobile_number", limit: 11
-    t.string   "firstname",     limit: 20
-    t.string   "lastname",      limit: 20
-    t.string   "username",                             null: false
+    t.string   "email",                   limit: 50
+    t.string   "mobile_number",           limit: 11
+    t.string   "firstname",               limit: 20
+    t.string   "lastname",                limit: 20
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password",      limit: 20
-    t.string   "date_of_birth", limit: 20
-    t.string   "address",       limit: 50
-    t.string   "postal_code",   limit: 7
-    t.integer  "user_type",     limit: 1,  default: 0, null: false
+    t.string   "password",                limit: 20
+    t.string   "date_of_birth",           limit: 20
+    t.string   "address",                 limit: 50
+    t.string   "postal_code",             limit: 7
+    t.integer  "user_type",               limit: 1,  default: 0, null: false
+    t.integer  "alternate_mobile_number"
+    t.string   "city"
+    t.string   "nationality"
+    t.string   "language"
+    t.string   "gender"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

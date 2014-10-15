@@ -1,236 +1,98 @@
- <form method='post' action='/event_apply' class="register">
-            <h1>Join This Event</h1>
+
+<title>Tell US About Yourself</title>
+  
+<div class="container">
+            <!-- freshdesignweb top bar -->
             
-            <fieldset class="row2">
-                <legend>Personal Details
-                </legend>
-               <p>
-                 <input type="hidden" name="event_id" value="<%= params[:id]%>"/>
-               </p>
-                <p>
-                    <label>Name *
-                    </label>
-                    <input type="text" class="long" name="name"/>
-                </p>
-                <p>
-                    <label>Phone *
-                    </label>
-                    <input type="text" maxlength="11" name="phone_no"/>
-                </p>
-                <p>
-                    <label class="long">Address
-                    </label>
-                    <input type="text" class="long" name="address"/>
-                </p>
-                <p>
-                    <label>City *
-                    </label>
-                    <input type="text" class="long"/>
-                </p>
-                <p>
-                    <label>Country *
-                    </label>
-                    <select>
-                        <option value="1">India
-                        </option>
-                    </select>
-                </p>
+            <header>
+                <h1>Tell Us About Yourself</h1>
+            </header>  
+        <form method='post' action='/event_apply' class="register">        
+      <div  class="form">
+            <form id="contactform"> 
+                <p class="contact"><label for="name">Name</label></p> 
+                <input id="name" name="name" placeholder="First and last name" required="" tabindex="1" type="text"> 
+                 
+            <select class="select-style gender" name="gender">
+            <option value="select">i am..</option>
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+            </select><br><br>
+
+            <p class="contact"><label for="email">Qualification</label></p> 
+            <select class="select-style gender" name="qualification">
+            <option value="10">10th</option>
+            <option value="12">12th</option>
+            <option value="Graduation in progress">Graduation in progress</option>
+            <option value="Graduation Completed">Graduation Completed</option>
+             </select><br><br>
+
+             <p class="contact"><label for="email">Language You Know</label></p> 
+                <input id="email" name="language" placeholder="Please Seperate by commas(,)" required="" type="text"> 
 
 
-                <p>
-                <label>Qualification *
-                    </label>
-                    <select>
-                        <option value="1" name="qualification[]" value="10"> 10th
-                        <option value="1" name="qualification[]" value="12"> 12th
-                        <option value="1" name="qualification[]" value="Graduation in progress"> Graduation in progress
-                        <option value="1" name="qualification[]" value="Graduation Completed"> Graduation Completed 
-                        </option>
-                    </select>
-                </p>
+
+
+                <p class="contact"><label for="email">Address</label></p> 
+                <input id="email" name="address" placeholder="where you live..." required="" type="text"> 
+
+                <p class="contact"><label for="email">City</label></p> 
+                <input id="email" name="city" placeholder="In Which City are you in..." required="" type="text"> 
+
+                <p class="contact"><label for="email">Nationality</label></p> 
+                <select class="select-style gender" name="nationality">
+            <option value="select">Indian</option>
+            
+            </select><br><br>
                 
-            </fieldset>
-            <fieldset class="row3">
-                <legend>Further Information
-                </legend>
-                <p>
-                    <label>Gender *</label>
-                    <input type="radio" value="radio"/>
-                    <label class="gender">Male</label>
-                    <input type="radio" value="radio"/>
-                    <label class="gender">Female</label>
-                </p>
-                <p>
-                    <label>Birthdate *
-                    </label>
-                    <select class="date">
-                        <option value="1">01
-                        </option>
-                        <option value="2">02
-                        </option>
-                        <option value="3">03
-                        </option>
-                        <option value="4">04
-                        </option>
-                        <option value="5">05
-                        </option>
-                        <option value="6">06
-                        </option>
-                        <option value="7">07
-                        </option>
-                        <option value="8">08
-                        </option>
-                        <option value="9">09
-                        </option>
-                        <option value="10">10
-                        </option>
-                        <option value="11">11
-                        </option>
-                        <option value="12">12
-                        </option>
-                        <option value="13">13
-                        </option>
-                        <option value="14">14
-                        </option>
-                        <option value="15">15
-                        </option>
-                        <option value="16">16
-                        </option>
-                        <option value="17">17
-                        </option>
-                        <option value="18">18
-                        </option>
-                        <option value="19">19
-                        </option>
-                        <option value="20">20
-                        </option>
-                        <option value="21">21
-                        </option>
-                        <option value="22">22
-                        </option>
-                        <option value="23">23
-                        </option>
-                        <option value="24">24
-                        </option>
-                        <option value="25">25
-                        </option>
-                        <option value="26">26
-                        </option>
-                        <option value="27">27
-                        </option>
-                        <option value="28">28
-                        </option>
-                        <option value="29">29
-                        </option>
-                        <option value="30">30
-                        </option>
-                        <option value="31">31
-                        </option>
-                    </select>
-                    <select>
-                        <option value="1">January
-                        </option>
-                        <option value="2">February
-                        </option>
-                        <option value="3">March
-                        </option>
-                        <option value="4">April
-                        </option>
-                        <option value="5">May
-                        </option>
-                        <option value="6">June
-                        </option>
-                        <option value="7">July
-                        </option>
-                        <option value="8">August
-                        </option>
-                        <option value="9">September
-                        </option>
-                        <option value="10">October
-                        </option>
-                        <option value="11">November
-                        </option>
-                        <option value="12">December
-                        </option>
-                    </select>
-                    <input class="year" type="text" size="4" maxlength="4"/>e.g 1976
-                </p>
-                <p>
-                    <label>Nationality *
-                    </label>
-                    <select>
-                        <option value="1">India
-                        </option>
-                    </select>
-                </p>
                 
-               
-            </fieldset>
-
-
-            <fieldset class="row2">
-                <legend>Event Regarding Information
-                </legend>
-                <p>
-                    <label>Event Exprience *
-                    </label>
+                
         
-            <select name="event_exp">
-                <option value="0">0
-                <option value="1">Less Than 5
-                <option value="2">Greater Than 5
-                <option value="3">Greater Than 10
-                        </option>
-            </select>
-                </p>
-
-                <p>
-                    <label class="long">Preferred Location
-                    </label>
-                    <input type="text" class="long" name="preferred_location"/>
-                </p>
-
-                <p>
-                    <label>Suitable Day *
-                    </label>
-                
-                    <input type="checkbox" name="suitable_day[]" value="Monday" >Monday<br>
-                    <input type="checkbox" name="suitable_day[]" value="Tuesday">Tuesday<br>
-                    <input type="checkbox" name="suitable_day[]" value="Wednesday">Wednesday<br>
-                    <input type="checkbox" name="suitable_day[]" value="Thursday">Thursday<br>
-                    <input type="checkbox" name="suitable_day[]" value="Friday">Friday<br>
-                    <input type="checkbox" name="suitable_day[]" value="Saturday">Saturday<br>
-                    <input type="checkbox" name="suitable_day[]" value="Sunday">Sunday<br>
-                
-                </p>
-
-                <p>
-                    <label> Suitable Time *
-                    </label>
-                    <label>
-                    From:</label>
-                    <input type="time" name="suitable_time_from" >
-                     <label>To:</label>           
-                    <input type="time" name="suitable_time_to" >
-                                   
-                </p>
-                <p>
-                    <label>Do You Have Bike *</label>
-                    <input type="radio" name="vehicle" value="1"/>
-                    <label class="gender">Yes</label>
-                    <input type="radio" name="vehicle" value="0"/>
-                    <label class="gender">No</label>
-                </p>
-                
-            </fieldset>
-
-
-
+               <fieldset>
+                 <label>Birthday</label>
+                  <label class="month"> 
+                  <select class="select-style" name="dob">
+                  <option value="">Month</option>
+                  <option  value="01">January</option>
+                  <option value="02">February</option>
+                  <option value="03" >March</option>
+                  <option value="04">April</option>
+                  <option value="05">May</option>
+                  <option value="06">June</option>
+                  <option value="07">July</option>
+                  <option value="08">August</option>
+                  <option value="09">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12" >December</option>
+                  </label>
+                 </select>    
+                <label>Day<input class="birthday" maxlength="2" name="dob"  placeholder="Day" required=""></label>
+                <label>Year <input class="birthyear" maxlength="4" name="dob" placeholder="Year" required=""></label>
+              </fieldset>
+  
             
-            <div><button type="submit" class="button">Join &raquo;</button></div>
-        </form>
-    
+            
+            <p class="contact"><label for="phone">Mobile Number</label></p> 
+            <input id="phone" name="mobile_number" placeholder="phone number" required="" type="text"> <br>
+
+            <p class="contact"><label for="phone">Alternate Mobile Number</label></p> 
+            <input id="phone" name="alternate_mobile_number" placeholder="Please Give another number..." required="" type="text"> <br>
+
+             <p class="contact"><label for="phone">Preferred  Location</label></p> 
+            <input id="phone" name="preferred_location" placeholder="Location Where You Confortable to do Events..." required="" type="text"> <br>
+
+            <select class="select-style gender" name="vehicle">
+            <option value="select">Do You Have Bike...</option>
+            <option value="m">Yes</option>
+            <option value="f">No</option>
+            </select><br><br>
 
 
 
+            <input class="buttom" name="submit" id="submit" value="Submit" type="submit">      
+   </form> 
+</div>      
+</div>
 
+</form>
