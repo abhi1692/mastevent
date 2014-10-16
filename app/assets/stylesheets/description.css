@@ -1,0 +1,60 @@
+#desc h1{
+	
+	 
+ 
+    background-color: #FAFEFF;
+    border: 1px solid #FAFEFF;
+    color: black;
+    font-size: 22px;
+    font-family: arial;
+    
+   } 
+
+
+
+
+   hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    border-color:orange;
+} 
+
+  #desc2{
+   	
+   	  
+
+   
+background-color:white;
+border:1px solid;
+border-color:white;
+margin:0;
+padding:.5em;
+zoom: 1;
+   	  
+   }
+
+   .button
+{
+    background: #1975FF ;
+    padding: 8px 10px 8px;
+    color: white;
+    text-decoration: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    cursor: pointer;
+    float:left;
+    font-size:18px;
+    
+}
+
+   
+
+   

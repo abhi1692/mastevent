@@ -19,4 +19,6 @@
 @import "signup";
 @import "events";
 @import "login";
-@import "complete_info"
+@import "complete_info";
+@import "post_event";
+@import "description"

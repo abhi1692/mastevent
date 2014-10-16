@@ -1,14 +1,21 @@
-    <div>
-      <h2 id="para7"><%=@event.event_name%></h2><br/>
-       <p id="para8">Starting On: <%=@event.event_start_date%><br/></p>
-       <p id="para8">Ending On: <%=@event.event_end_date.strftime("%d %B %Y")%><br/></p>
-        <p id="para8">Total Number Of Days: <%=@event.number_of_days%><br/></p>
-       <p  id="para8">Payment Per Day: <%=@event.pay_per_day%><br/></p>
-       <p  id="para8">Event location: <%=@event.location%><br/></p>
-       <p  id="para8">Coordinator Required: <%=@event.coordinator_required%><br/></p>
-       <p  id="para8">Description: <%=@event.description%><br/></p>
+    <div id="desc">
+      <h1><strong><%=@event.event_name%></strong></h2>
+    </div>
+    <h1 style="color:black;font-weight: bold;font-size:18px;font-family:arial">Full Description</h1>
+    <hr >
+   
+    <div id="desc2">
+       <p >Starting On: <%=@event.event_start_date%><br/></p>
+       <p >Ending On: <%=@event.event_end_date.strftime("%d %B %Y")%><br/></p>
+        <p >Total Number Of Days: <%=@event.number_of_days%><br/></p>
+       <p  >Payment Per Day: <%=@event.pay_per_day%><br/></p>
+       <p  >Event location: <%=@event.location%><br/></p>
+       <p  >Coordinator Required: <%=@event.coordinator_required%><br/></p>
+       <p  >Description: <%=@event.description%><br/></p>
 
-      <center><a id="para9" href="/apply/<%=@event.id%>" >Join Event</a>
+
+      <a  class="button" style="text-decoration: none;"href="/apply/<%=@event.id%>" >Join Event</a><br><br><br>
+     <hr>
     </div>
 
 
