@@ -52,18 +52,19 @@ ActiveRecord::Schema.define(version: 20141015162937) do
     t.string   "mobile_number",           limit: 11
     t.string   "firstname",               limit: 20
     t.string   "lastname",                limit: 20
+    t.string   "username",                                       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password",                limit: 20
     t.string   "date_of_birth",           limit: 20
     t.string   "address",                 limit: 50
     t.string   "postal_code",             limit: 7
-    t.integer  "user_type",               limit: 1,  default: 0, null: false
     t.integer  "alternate_mobile_number"
     t.string   "city"
     t.string   "nationality"
     t.string   "language"
     t.string   "gender"
+    t.integer  "user_type",               limit: 1,  default: 0, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
