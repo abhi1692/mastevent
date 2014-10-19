@@ -11,32 +11,32 @@
       <div  class="form">
             <form id="contactform"> 
                 <p class="contact"><label for="name">Name Of Event or Activity</label></p> 
-                <input id="name" name="" placeholder="for ex. Times Of India Corporate event" required="" tabindex="1" type="text"> 
+                <input id="name" name="eventname" placeholder="for ex. Times Of India Corporate event" required="" tabindex="1" type="text"> 
                  
-            <select class="select-style gender" name="">
+            <select class="select-style gender" name="volunteer_type">
             <option value="select">You Need..</option>
-            <option value="m">Male Volunteer</option>
-            <option value="f">Female Volunteers</option>
-             <option value="f">Coordinator</option>
+            <option value="0">Male Volunteer</option>
+            <option value="1">Female Volunteers</option>
+             <option value="2">Coordinator</option>
             </select><br><br>
 
             <p class="contact"><label for="phone">Payment Per Day</label></p> 
-            <input id="phone" name="" placeholder="Payment You give to volunteers ..." required="" type="text"> <br>  
+            <input id="phone" name="pay_per_day" placeholder="Payment You give to volunteers ..." required="" type="text"> <br>  
                 
 
             
             <p class="contact"><label for="phone">Volunteers Needed</label></p> 
-            <input id="phone" name="" placeholder="total number of volunteers needed for the activity ..." required="" type="text"> <br>
+            <input id="phone" name="coordinator_required" placeholder="total number of volunteers needed for the activity ..." required="" type="text"> <br>
 
 
 
 
 
              <p class="contact"><label for="phone">Enter Location</label></p> 
-            <input id="phone" name="preferred_location" placeholder="area of activity..." required="" type="text"> <br>
+            <input id="phone" name="location" placeholder="area of activity..." required="" type="text"> <br>
 
             <p class="contact"><label for="email">Activity Address</label></p> 
-            <textarea cols="50" rows="2" id="email" name="" placeholder="where the activity going to happen(specify complete address)..." required="" type="text"></textarea> 
+            <textarea cols="50" rows="2" id="email" name="address" placeholder="where the activity going to happen(specify complete address)..." required="" type="text"></textarea> 
 
 
             <p class="contact"><label for="email">City</label></p> 
@@ -49,7 +49,7 @@
                <fieldset>
                  <label>Date Of Event/Activity</label><br>
                   <label class="month"> 
-                  <select class="select-style" name="">
+                  <select class="select-style" name="date_of_event">
                   <option value="">Month</option>
                   <option  value="01">January</option>
                   <option value="02">February</option>
@@ -65,33 +65,33 @@
                   <option value="12" >December</option>
                   </label>
                  </select>    
-                <label>Day<input class="birthday" maxlength="2" name=""  placeholder="Day" required=""></label>
-                <label>Year <input class="birthyear" maxlength="4" name="" placeholder="Year" required=""></label>
+                <label>Day<input class="birthday" maxlength="2" name="date_of_event"  placeholder="Day" required=""></label>
+                <label>Year <input class="birthyear" maxlength="4" name="date_of_event" placeholder="Year" required=""></label>
               </fieldset>
   
             <p class="contact"><label for="phone">Total Days Of Activity</label></p> 
-            <input id="phone" name="" placeholder="for ex. 1,3,5 ..." required="" type="text"> <br>
+            <input id="phone" name="number_of_days" placeholder="for ex. 1,3,5 ..." required="" type="text"> <br>
 
             
             <p class="contact"><label for="phone">Mobile Number</label></p> 
-            <input id="phone" name="" placeholder="give your number so that coordinator/volunteer will contact you..." required="" type="text"> <br>
+            <input id="phone" name="mobile_number" placeholder="give your number so that coordinator/volunteer will contact you..." required="" type="text"> <br>
 
             <p class="contact"><label for="phone">Alternate Mobile Number</label></p> 
-            <input id="phone" name="" placeholder="Please Give another number..." required="" type="text"> <br>
+            <input id="phone" name="alternate_number" placeholder="Please Give another number..." required="" type="text"> <br>
 
             
             
 
-            <select class="select-style gender" name="vehicle">
+            <select class="select-style gender" name="bike">
             <option value="select">Need Volunteers who have bike...</option>
-            <option value="">Yes</option>
-            <option value="">No</option>
-            <option value="">Not Necessary</option>
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+            <option value="2">Not Necessary</option>
             </select><br><br>
 
 
             <p class="contact"><label for="email">Description</label></p> 
-            <textarea cols="50" rows="4" id="email" name="" placeholder="a brief description about event or activity , specify something like you are providing pick and drop or lunch..." required="" type="text" ></textarea> 
+            <textarea cols="50" rows="4" id="email" name="description" placeholder="a brief description about event or activity , specify something like you are providing pick and drop or lunch..." required="" type="text" ></textarea> 
 
              
 

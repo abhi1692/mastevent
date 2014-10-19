@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019160417) do
+ActiveRecord::Schema.define(version: 20141019173954) do
 
   create_table "events", force: true do |t|
     t.string   "event_name",           limit: 100
@@ -25,9 +25,12 @@ ActiveRecord::Schema.define(version: 20141019160417) do
     t.text     "description"
     t.string   "time"
     t.boolean  "status",                                                    default: true
-    t.string   "gender",               limit: 6
     t.integer  "number_of_days"
-    t.date     "event_end_date"
+    t.string   "address"
+    t.integer  "bike"
+    t.integer  "volunteer_type"
+    t.integer  "mobile_number"
+    t.integer  "alternate_number"
   end
 
   create_table "user_event_infos", force: true do |t|
