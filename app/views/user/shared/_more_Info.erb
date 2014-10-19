@@ -1,0 +1,96 @@
+
+<title>Tell US About Yourself</title>
+
+<div class="container">
+
+
+  <header>
+    <h1>Tell Us About Yourself</h1>
+  </header>
+  <form method='post' action='/user/save_more_info' class="register">
+    <div  class="form">
+      <form id="contactform">
+        <p class="contact"><label for="name">Name</label></p>
+        <input id="name" name="firstname" placeholder="First and last name" required="" tabindex="1" type="text">
+
+        <select class="select-style gender" name="gender">
+          <option value="m">i am..</option>
+          <% User.genders.each do |key, val| %>
+            <option value="<%=val%>"><%=key.titlecase%></option>
+          <%end%>
+        </select><br><br>
+
+        <p class="contact"><label for="email">Qualification</label></p>
+        <select class="select-style gender" name="qualification">
+          <%User.qualifications.each do |key, val|%>
+              <option value="<%=val%>"><%=key%></option>
+          <%end%>
+        </select><br><br>
+
+        <p class="contact"><label for="email">Language You Know</label></p>
+        <input id="email" name="language" placeholder="Please Seperate by commas(,)" required="" type="text">
+
+
+
+
+        <p class="contact"><label for="email">Address</label></p>
+        <input id="email" name="address" placeholder="where you live..." required="" type="text">
+
+        <p class="contact"><label for="email">City</label></p>
+        <input id="email" name="city" placeholder="In Which City are you in..." required="" type="text">
+
+        <p class="contact"><label for="email">Nationality</label></p>
+        <select class="select-style gender" name="nationality">
+          <option value="indian">Indian</option>
+
+        </select><br><br>
+
+
+
+
+        <fieldset>
+          <label>Birthday</label>
+          <label class="month">
+            <select class="select-style" name="date_of_birth[]">
+              <option value="">Month</option>
+              <option  value="01">January</option>
+              <option value="02">February</option>
+              <option value="03" >March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12" >December</option>
+          </label>
+          </select>
+          <label>Day<input class="birthday" maxlength="2" name="date_of_birth[]"  placeholder="Day" required=""></label>
+          <label>Year <input class="birthyear" maxlength="4" name="date_of_birth[]" placeholder="Year" required=""></label>
+        </fieldset>
+
+     <!--
+        <p class="contact"><label for="phone">Alternate Mobile Number</label></p>
+        <input id="phone" name="alternate_mobile_number" placeholder="Please Give another number..." required="" type="text"> <br>
+     -->
+
+        <p class="contact"><label for="phone">Preferred  Location</label></p>
+        <input id="phone" name="preferred_location" placeholder="Location Where You Confortable to do Events..." required="" type="text"> <br>
+
+        <p class="bike"><label for="email">Do you have bike...</label></p>
+        <select class="select-style gender" name="bike">
+          <%User.bikes.each do |key, val| %>
+            <option value="<%= val%>" ><%=key.titlecase%></option>
+          <%end%>
+        </select><br><br>
+
+
+
+        <input class="buttom" name="submit" id="submit" value="Submit" type="submit">
+      </form>
+    </div>
+</div>
+
+</form>

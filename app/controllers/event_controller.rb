@@ -7,11 +7,7 @@ class EventController < ApplicationController
   end
 
   def apply
-
-  end
-
-  def event_apply
-    @obj = UserEventInfo.create_update(params)
+    Applicant.create(:user_id => @current_user.id, :event_id => params[:event_id])
   end
 
   def new
@@ -30,9 +26,6 @@ class EventController < ApplicationController
   end
 
   def applicant
-    params[:id] = params[:id].to_i
-    return to root if params[:id].to_i < 1
-    @applicants = UserEventInfo.get_applicants(params)
   end
 
   def about

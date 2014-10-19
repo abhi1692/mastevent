@@ -4,8 +4,7 @@ Rails.application.routes.draw do
 
 
    get 'description/:id' => 'event#description'
-   get 'apply/:id' => 'event#apply'
-   post 'event_apply' => 'event#event_apply'
+   get 'apply/:event_id' => 'event#apply'
 
    get 'applicant/:id' => 'event#applicant'
    get 'event/new' => 'event#new'
@@ -38,6 +37,8 @@ Rails.application.routes.draw do
     collection do
       get '/new' => :new
       post '/signup' => :signup
+      get '/more_info' => :more_info_form
+      post '/save_more_info' => :save_more_info
       get '/logout' => :logout
       get '/login-form' => :login_form
       post '/login' => :login

@@ -15,11 +15,25 @@ class UserController < ApplicationController
     if result[:err].blank?
       @current_user = result[:usr_obj]
       set_user_auth_cookies(result)
-      redirect_to '/event'  # Success
+      redirect_to '/user/more_info'  # Success
     else
       @errors = result[:errors]
     end
 
+  end
+
+  def more_info_form
+
+  end
+
+  def save_more_info
+    usr = User.where(:id => @current_user.id).first
+    result = usr.save_more_info(params)
+    if result[:err].blank?
+      redirect_to '/event'  # Success
+    else
+      @errors = result[:errors] # Failure
+    end
   end
 
   def login_form
@@ -43,33 +57,6 @@ class UserController < ApplicationController
     cookies.delete GlobalConst::USER_COOKIE, :domain => GlobalConst::COOKIE_DOMAIN
 
     redirect_to root_url
-  end
-
-
-
-	def success_user_event_info
-    	user_event_info = UserEventInfo.new
-    	
-    	@user_event_info = user_event_info.update_user_event_info(params)
-    end
-
-	def more_signup
-		user= User.where(:email => params[:email]).first
-		@user= user.more_update(params)
-	end
-
-	def event_info
-		#binding.pry
-		user = User.new
-
-		@user = user.update_user(params)
-	end
-
-	def user_event_info
-
-		# create migration for user_events
-		# create model for user_events
-		# save in user_events
   end
 
   def set_user_auth_cookies(params)

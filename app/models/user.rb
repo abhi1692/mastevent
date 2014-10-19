@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
 
   enum user_type: {volunteer: 0, coordinator: 1}
+  enum gender: {male: 'm', female: 'f'}
+  enum qualification: {'10th' => 0, '12th' => 1, 'Graduation in progress' => 2, 'Graduation Completed' => 3}
+  enum bike: {'yes' => 1, 'no' => 0}
+
   INVERTED_USER_TYPE = User.user_types.invert
 
   PASSWORD_LENGTH = 6
@@ -29,13 +33,12 @@ class User < ActiveRecord::Base
 		usr_obj.password = params[:password]
 		usr_obj. postal_code=params[:ptc]
     usr_obj. alternate_mobile_number=params[:alternate_mobile_number]
-usr_obj. city=params[:city]
-usr_obj.nationality=params[:nationality]
-usr_obj. language=params[:language]
-usr_obj. gender=params[:gender]
+    usr_obj. city=params[:city]
+    usr_obj.nationality=params[:nationality]
+    usr_obj. language=params[:language]
+    usr_obj. gender=params[:gender]
 
-
-		usr_obj.save!
+    usr_obj.save!
 		#return usr_obj
 	end
 
@@ -54,5 +57,26 @@ usr_obj. gender=params[:gender]
     cookie_name = GlobalConst::USER_COOKIE
     return {err: errors.present? ? 'err1' : nil,  errors:  errors, usr_obj: self}.merge!(cookie_name => self.id)
 
+  end
+
+  def save_more_info(params)
+    self.firstname = params[:firstname]
+    self.gender = params[:gender]
+    self.qualification = params[:qualification].to_i
+    self.language = params[:language]
+    self.address = params[:address]
+    self.city = params[:city]
+    self.nationality = params[:nationality]
+    self.date_of_birth = params[:date_of_birth].join('-')  #mm-dd-yyyy
+    #self.alternate_mobile_number = params[:alternate_mobile_number]
+    self.preferred_location = params[:preferred_location]
+    self.bike = params[:bike].to_i
+    errors = {}
+    if !(self.valid?)
+      errors = self.errors.messages.values.flatten
+    else
+      self.save!
+    end
+    return {err: errors.present? ? 'err1' : nil,  errors:  errors}
   end
 end
