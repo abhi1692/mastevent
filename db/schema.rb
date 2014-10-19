@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015162937) do
+ActiveRecord::Schema.define(version: 20141019160417) do
 
   create_table "events", force: true do |t|
     t.string   "event_name",           limit: 100
+    t.integer  "user_id",                                                   default: 0,    null: false
     t.date     "event_start_date"
     t.integer  "coordinator_required"
     t.decimal  "pay_per_day",                      precision: 15, scale: 2
