@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
 
 	def self.save_event(params)
 		event_obj = where(id: params[:id]).first
-		event_obj.event_name = params[:eventname]
+		event_obj.event_name = params[:event_name]
 		event_obj.event_start_date = params[:date_of_event]
 		event_obj.coordinator_required = params[:coordinator_required]
 		event_obj.pay_per_day = params[:pay_per_day]
@@ -23,7 +23,7 @@ class Event < ActiveRecord::Base
   def self.get_events(params)
     et = ['m', 'f']
     et = [params[:et]] if params[:et].present?
-    Event.all.where(:status => true, :gender => et).all
+    Event.all.where(:status => true).all
   end
 
 end
