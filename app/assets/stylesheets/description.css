@@ -1,4 +1,4 @@
-#desc h1{
+#desc h1 {
     background-color: #FAFEFF;
     border: 1px solid #FAFEFF;
     color: black;
@@ -17,15 +17,14 @@ hr {
     border-color:orange;
 } 
 
-  #desc2{
+#desc2 {
 background-color:white;
 border:1px solid;
 border-color:white;
 margin:0;
 padding:.5em;
 zoom: 1;
-   	  
-   }
+}
 
 .button
 {
