@@ -39,28 +39,20 @@
             <textarea cols="50" rows="2" id="email" name="address" placeholder="where the activity going to happen(specify complete address)..." required="" type="text">
               <%=@event.address%>
             </textarea>
-        
+
+              <%splitted_event_date = @event.event_start_date.to_s.split('-') #yyyy-mm-dd%>
                <fieldset>
                  <label>Date Of Event/Activity</label><br>
-                  <label class="month"> 
-                  <select class="select-style" name="date_of_event">
-                  <option value="">Month</option>
-                  <option  value="01">January</option>
-                  <option value="02">February</option>
-                  <option value="03" >March</option>
-                  <option value="04">April</option>
-                  <option value="05">May</option>
-                  <option value="06">June</option>
-                  <option value="07">July</option>
-                  <option value="08">August</option>
-                  <option value="09">September</option>
-                  <option value="10">October</option>
-                  <option value="11">November</option>
-                  <option value="12" >December</option>
+                  <label class="month">
+                  <select class="select-style" name="date_of_event[]">
+                    <option value="">Month</option>
+                    <%Event::MONTH_MAP.each do |key, val| %>
+                        <option value=<%=key%> <%=key.to_i == splitted_event_date[1].to_i ? 'selected': ''%> ><%=val.titlecase%></option>
+                    <%end%>
                   </label>
                  </select>    
-                <label>Day<input class="birthday" maxlength="2" name="date_of_event"  placeholder="Day" required="" type="text"></label>
-                <label>Year <input class="birthyear" maxlength="4" name="date_of_event" placeholder="Year" required="" type="text"></label>
+                <label>Day<input class="birthday" maxlength="2" name="date_of_event[]"  placeholder="Day" required="" type="text" value="<%=splitted_event_date[2]%>"></label>
+                <label>Year <input class="birthyear" maxlength="4" name="date_of_event[]" placeholder="Year" required="" type="text" value="<%=splitted_event_date[0]%>"></label>
               </fieldset>
   
             <p class="contact"><label for="phone">Total Days Of Activity</label></p> 
