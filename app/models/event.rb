@@ -39,6 +39,7 @@ class Event < ActiveRecord::Base
   end
 
   def self.get_event_name(event_name, volunteer_type)
+    return event_name if event_name.include?("- (")
     event_name_suffix = ""
     if volunteer_type == Event.volunteer_types["Male Volunteer"]
       event_name_suffix = " - (For Female Volunteers)"
