@@ -42,9 +42,9 @@ class Event < ActiveRecord::Base
     return event_name if event_name.include?("- (")
     event_name_suffix = ""
     if volunteer_type == Event.volunteer_types["Male Volunteer"]
-      event_name_suffix = " - (For Female Volunteers)"
-    elsif volunteer_type == Event.volunteer_types["Female Volunteer"]
       event_name_suffix = " - (For Male Volunteers)"
+    elsif volunteer_type == Event.volunteer_types["Female Volunteer"]
+      event_name_suffix = " - (For Female Volunteers)"
     end
     return event_name << event_name_suffix
   end
