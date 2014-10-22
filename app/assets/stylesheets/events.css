@@ -50,7 +50,6 @@
    #event:hover{
    	border-width: 3px ;
    	border-color: #FFA319;
-;
    }
 
    div.clickable { /* Containing div must have a position value */

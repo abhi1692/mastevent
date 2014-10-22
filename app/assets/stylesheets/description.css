@@ -1,7 +1,4 @@
 #desc h1{
-	
-	 
- 
     background-color: #FAFEFF;
     border: 1px solid #FAFEFF;
     color: black;
@@ -9,11 +6,7 @@
     font-family: arial;
     
    } 
-
-
-
-
-   hr { 
+hr { 
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -25,10 +18,6 @@
 } 
 
   #desc2{
-   	
-   	  
-
-   
 background-color:white;
 border:1px solid;
 border-color:white;
@@ -38,7 +27,7 @@ zoom: 1;
    	  
    }
 
-   .button
+.button
 {
     background: #1975FF ;
     padding: 8px 10px 8px;
@@ -52,7 +41,6 @@ zoom: 1;
     cursor: pointer;
     float:left;
     font-size:18px;
-    
 }
 
    
