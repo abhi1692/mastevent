@@ -9,7 +9,7 @@ Rails.application.routes.draw do
    get 'applicant/:id' => 'event#applicant'
    get 'event/new' => 'event#new'
    match 'event/edit/:id' => 'event#edit', via: [:get]
-   post 'event/save/:id' => 'event#save'
+   post 'event/save/(:id)' => 'event#save'
 
   root 'home_page#index'
 

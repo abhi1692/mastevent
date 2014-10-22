@@ -11,36 +11,36 @@
       <div  class="form">
             <form id="contactform"> 
                 <p class="contact"><label for="name">Name Of Event or Activity</label></p> 
-                <input id="name" name="event_name" placeholder="for ex. Times Of India Corporate event" required="" tabindex="1" type="text" value="<%=@event.event_name%>">
+                <input id="name" name="event_name" placeholder="for ex. Times Of India Corporate event" required="" tabindex="1" type="text" value="<%=@event.present? ? @event.event_name : ""%>">
 
              <p class="contact"><label for="phone">You Need</label></p>
             <select class="select-style gender" name="volunteer_type">
               <% Event.volunteer_types.each do |key, val| %>
-                <option value=<%=val%> <%=@event.volunteer_type == key ? "selected" : ""%>><%=key%></option>
+                <option value=<%=val%> <%=@event.present? && @event.volunteer_type == key ? "selected" : ""%>><%=key%></option>
               <%end%>
             </select><br><br>
 
             <p class="contact"><label for="phone">Payment Per Day</label></p> 
-            <input id="phone" name="pay_per_day" placeholder="Payment You give to volunteers ..." required="" type="text" value=<%=@event.pay_per_day%> > <br>
+            <input id="phone" name="pay_per_day" placeholder="Payment You give to volunteers ..." required="" type="text" value=<%=@event.present? ? @event.pay_per_day : ""%> > <br>
                 
 
             
             <p class="contact"><label for="phone">Volunteers Needed</label></p> 
-            <input id="phone" name="coordinator_required" placeholder="total number of volunteers needed for the activity ..." required="" type="text" value=<%=@event.coordinator_required%>> <br>
+            <input id="phone" name="coordinator_required" placeholder="total number of volunteers needed for the activity ..." required="" type="text" value=<%=@event.present? ? @event.coordinator_required : ""%>> <br>
 
 
 
 
 
              <p class="contact"><label for="phone">Enter Location</label></p> 
-            <input id="phone" name="location" placeholder="area of activity..." required="" type="text" value="<%= @event.location%>"> <br>
+            <input id="phone" name="location" placeholder="area of activity..." required="" type="text" value="<%= @event.present? ? @event.location : ""%>"> <br>
 
             <p class="contact"><label for="email">Activity Address</label></p> 
             <textarea cols="50" rows="2" id="email" name="address" placeholder="where the activity going to happen(specify complete address)..." required="" type="text">
-              <%=@event.address%>
+              <%=@event.present? ? @event.address : ""%>
             </textarea>
 
-              <%splitted_event_date = @event.event_start_date.to_s.split('-') #yyyy-mm-dd%>
+              <%splitted_event_date = @event.present? ? @event.event_start_date.to_s.split('-') : [] #yyyy-mm-dd%>
                <fieldset>
                  <label>Date Of Event/Activity</label><br>
                   <label class="month">
@@ -56,7 +56,7 @@
               </fieldset>
   
             <p class="contact"><label for="phone">Total Days Of Activity</label></p> 
-            <input id="phone" name="number_of_days" placeholder="for ex. 1,3,5 ..." required="" type="text" value="<%=@event.number_of_days%>"> <br>
+            <input id="phone" name="number_of_days" placeholder="for ex. 1,3,5 ..." required="" type="text" value="<%=@event.present? ? @event.number_of_days : ""%>"> <br>
 
          <!--
             <p class="contact"><label for="phone">Mobile Number</label></p> 
@@ -71,14 +71,14 @@
              <p class="contact"><label for="email">Need Volunteers who have bike...</label></p>
             <select class="select-style gender" name="bike">
               <%Event.bikes.each do |key, val| %>
-                  <option value="<%=val%>" <%=@event.bike==key ? "selected": ""%>><%=key.titlecase%></option>
+                  <option value="<%=val%>" <%=(@event.present? && @event.bike==key) ? "selected": ""%>><%=key.titlecase%></option>
                <%end%>
             </select><br><br>
 
 
             <p class="contact"><label for="email">Description</label></p> 
             <textarea cols="50" rows="4" id="email" name="description" placeholder="a brief description about event or activity , specify something like you are providing pick and drop or lunch..." required="" type="text">
-              <%=@event.description%>
+              <%=@event.present? ? @event.description : ""%>
             </textarea>
 
 

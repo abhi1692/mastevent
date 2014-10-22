@@ -18,7 +18,11 @@ class Event < ActiveRecord::Base
   }
 
 	def self.save_event(params)
-		event_obj = where(id: params[:id].to_i).first
+    if params[:id].present?
+      event_obj = where(id: params[:id].to_i).first
+    else
+      event_obj = new
+    end
     params[:volunteer_type] = params[:volunteer_type].to_i
 		event_obj.event_name = get_event_name(params[:event_name], params[:volunteer_type])
 		event_obj.event_start_date = DateTime.strptime(params[:date_of_event].join('-'), "%m-%d-%Y") rescue ""
@@ -31,6 +35,7 @@ class Event < ActiveRecord::Base
     event_obj.number_of_days =params[:number_of_days]
     event_obj.bike = params[:bike].to_i
     event_obj.save!
+    return event_obj
   end
 
   def self.get_event_name(event_name, volunteer_type)

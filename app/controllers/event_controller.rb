@@ -11,8 +11,8 @@ class EventController < ApplicationController
   end
 
   def new
-    event = Event.create
-    redirect_to action: :edit, id: event.id
+    #event = Event.create
+    #redirect_to action: :edit
   end
 
   def edit
@@ -21,8 +21,8 @@ class EventController < ApplicationController
   end
 
   def save
-    Event.save_event(params)
-    redirect_to action: :edit, id: params[:id]
+    event = Event.save_event(params)
+    redirect_to action: :edit, id: event.id
   end
 
   def applicant
