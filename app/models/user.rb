@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
     self.city = params[:city]
     self.nationality = params[:nationality]
     self.date_of_birth = params[:date_of_birth].join('-')  #mm-dd-yyyy
-    #self.alternate_mobile_number = params[:alternate_mobile_number]
+    self.alternate_mobile_number = params[:alternate_mobile_number]
     self.preferred_location = params[:preferred_location]
     self.bike = params[:bike].to_i
     errors = {}
