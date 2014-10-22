@@ -10,13 +10,13 @@
   <form method='post' action='/user/save_more_info' class="register">
     <div  class="form">
       <form id="contactform">
-        <p class="contact"><label for="name">Name</label></p>
+        <p class="contact"><label  for="name">Name</label></p>
         <input id="name" name="firstname" placeholder="First and last name" required="" tabindex="1" type="text">
 
         <select class="select-style gender" name="gender">
           <option value="m">i am..</option>
           <% User.genders.each do |key, val| %>
-            <option value="<%=val%>"><%=key.titlecase%></option>
+            <option tabindex="2" value="<%=val%>"><%=key.titlecase%></option>
           <%end%>
         </select><br><br>
 
@@ -53,18 +53,18 @@
           <label class="month">
             <select class="select-style" name="date_of_birth[]">
               <option value="">Month</option>
-              <option  value="01">January</option>
-              <option value="02">February</option>
-              <option value="03" >March</option>
-              <option value="04">April</option>
-              <option value="05">May</option>
-              <option value="06">June</option>
-              <option value="07">July</option>
-              <option value="08">August</option>
-              <option value="09">September</option>
-              <option value="10">October</option>
-              <option value="11">November</option>
-              <option value="12" >December</option>
+              <option  value="Jan">January</option>
+              <option value="feb">February</option>
+              <option value="mar" >March</option>
+              <option value="Apr">April</option>
+              <option value="May">May</option>
+              <option value="june">June</option>
+              <option value="Jul">July</option>
+              <option value="Aug">August</option>
+              <option value="Sept">September</option>
+              <option value="oct">October</option>
+              <option value="nov">November</option>
+              <option value="dec" >December</option>
           </label>
           </select>
           <label>Day<input class="birthday" maxlength="2" name="date_of_birth[]"  placeholder="Day" required=""></label>
