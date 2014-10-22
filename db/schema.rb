@@ -36,8 +36,6 @@ ActiveRecord::Schema.define(version: 20141022141423) do
     t.string   "address"
     t.integer  "bike"
     t.integer  "volunteer_type"
-    t.integer  "mobile_number"
-    t.integer  "alternate_number"
   end
 
   create_table "user_event_infos", force: true do |t|

@@ -7,44 +7,38 @@
             <header>
                 <h1>Post An Event</h1>
             </header>  
-        <form method='post' action='/event/save' class="register">
+        <form method='post' action='/event/save/<%=params[:id]%>' class="register">
       <div  class="form">
             <form id="contactform"> 
                 <p class="contact"><label for="name">Name Of Event or Activity</label></p> 
-                <input id="name" name="event_name" placeholder="for ex. Times Of India Corporate event" required="" tabindex="1" type="text"> 
-                 
+                <input id="name" name="event_name" placeholder="for ex. Times Of India Corporate event" required="" tabindex="1" type="text" value="<%=@event.event_name%>">
+
+             <p class="contact"><label for="phone">You Need</label></p>
             <select class="select-style gender" name="volunteer_type">
-            <option value="select">You Need..</option>
-            <option value="0">Male Volunteer</option>
-            <option value="1">Female Volunteers</option>
-             <option value="2">Coordinator</option>
+              <% Event.volunteer_types.each do |key, val| %>
+                <option value=<%=val%> <%=@event.volunteer_type == key ? "selected" : ""%>><%=key%></option>
+              <%end%>
             </select><br><br>
 
             <p class="contact"><label for="phone">Payment Per Day</label></p> 
-            <input id="phone" name="pay_per_day" placeholder="Payment You give to volunteers ..." required="" type="text"> <br>  
+            <input id="phone" name="pay_per_day" placeholder="Payment You give to volunteers ..." required="" type="text" value=<%=@event.pay_per_day%> > <br>
                 
 
             
             <p class="contact"><label for="phone">Volunteers Needed</label></p> 
-            <input id="phone" name="coordinator_required" placeholder="total number of volunteers needed for the activity ..." required="" type="text"> <br>
+            <input id="phone" name="coordinator_required" placeholder="total number of volunteers needed for the activity ..." required="" type="text" value=<%=@event.coordinator_required%>> <br>
 
 
 
 
 
              <p class="contact"><label for="phone">Enter Location</label></p> 
-            <input id="phone" name="location" placeholder="area of activity..." required="" type="text"> <br>
+            <input id="phone" name="location" placeholder="area of activity..." required="" type="text" value="<%= @event.location%>"> <br>
 
             <p class="contact"><label for="email">Activity Address</label></p> 
-            <textarea cols="50" rows="2" id="email" name="address" placeholder="where the activity going to happen(specify complete address)..." required="" type="text"></textarea> 
-
-
-            <p class="contact"><label for="email">City</label></p> 
-            <input id="email" name="" placeholder="In Which City activity going to happen..." required="" type="text"> 
-
-           
-               
-                
+            <textarea cols="50" rows="2" id="email" name="address" placeholder="where the activity going to happen(specify complete address)..." required="" type="text">
+              <%=@event.address%>
+            </textarea>
         
                <fieldset>
                  <label>Date Of Event/Activity</label><br>
@@ -70,35 +64,33 @@
               </fieldset>
   
             <p class="contact"><label for="phone">Total Days Of Activity</label></p> 
-            <input id="phone" name="number_of_days" placeholder="for ex. 1,3,5 ..." required="" type="text"> <br>
+            <input id="phone" name="number_of_days" placeholder="for ex. 1,3,5 ..." required="" type="text" value="<%=@event.number_of_days%>"> <br>
 
-            
+         <!--
             <p class="contact"><label for="phone">Mobile Number</label></p> 
             <input id="phone" name="mobile_number" placeholder="give your number so that coordinator/volunteer will contact you..." required="" type="text"> <br>
 
             <p class="contact"><label for="phone">Alternate Mobile Number</label></p> 
             <input id="phone" name="alternate_number" placeholder="Please Give another number..." required="" type="text"> <br>
+          -->
 
-            
-            
 
+
+             <p class="contact"><label for="email">Need Volunteers who have bike...</label></p>
             <select class="select-style gender" name="bike">
-            <option value="select">Need Volunteers who have bike...</option>
-            <option value="0">Yes</option>
-            <option value="1">No</option>
-            <option value="2">Not Necessary</option>
+              <%Event.bikes.each do |key, val| %>
+                  <option value="<%=val%>" <%=@event.bike==key ? "selected": ""%>><%=key.titlecase%></option>
+               <%end%>
             </select><br><br>
 
 
             <p class="contact"><label for="email">Description</label></p> 
-            <textarea cols="50" rows="4" id="email" name="description" placeholder="a brief description about event or activity , specify something like you are providing pick and drop or lunch..." required="" type="text" ></textarea> 
-
-             
-
-
+            <textarea cols="50" rows="4" id="email" name="description" placeholder="a brief description about event or activity , specify something like you are providing pick and drop or lunch..." required="" type="text">
+              <%=@event.description%>
+            </textarea>
 
 
-            <input class="buttom" name="submit" id="submit" value="Submit" type="submit">      
+            <input class="buttom" name="submit" id="submit" value="Save" type="submit">
    </form> 
 </div>      
 </div>
