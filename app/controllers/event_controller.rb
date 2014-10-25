@@ -7,7 +7,7 @@ class EventController < ApplicationController
   end
 
   def apply
-    Applicant.create(:user_id => @current_user.id, :event_id => params[:event_id])
+    @result = Applicant.create_and_save(params.merge!(:current_user => @current_user))
   end
 
   def new

@@ -1,9 +1,13 @@
+<div>
+    <%if @result[:err].present? %>
 
+        <h3><%=@result[:msg] %></h3>
 
-<center><H1>Thank you for Interest.<br/><br/>
-We have recorded your response.<br/><br/>
-Coordinator/Event Organizer will call you soon.</center>
-</H1>
-<br/>
-<br>
-<center><a href="/event">Back To Events</a></center>
+    <%else%>
+        <p>Thank you for Interest.<br/><br/>
+        We have recorded your response.<br/><br/>
+        Coordinator/Event Organizer will call you soon.</p>
+        <br/><br/>
+    <%end%>
+    <a href="/event"><b>Back To Events</b></a>
+</div>

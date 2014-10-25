@@ -8,4 +8,6 @@ module GlobalConst
     COOKIE_DOMAIN = "127.0.0.1"
   end
 
+  ADMIN_MAIL_PREFIX = "[MastEvent: #{Rails.env}] "
+
 end

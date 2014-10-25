@@ -68,11 +68,11 @@ ActiveRecord::Schema.define(version: 20141022141423) do
     t.string   "date_of_birth",           limit: 20
     t.string   "address",                 limit: 50
     t.string   "postal_code",             limit: 7
+    t.integer  "user_type",               limit: 1,  default: 0, null: false
     t.string   "city"
     t.string   "nationality"
     t.string   "language"
     t.string   "gender"
-    t.integer  "user_type",               limit: 1,  default: 0, null: false
     t.integer  "qualification",                      default: 0, null: false
     t.integer  "bike",                               default: 0, null: false
     t.string   "preferred_location"
