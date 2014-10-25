@@ -79,4 +79,5 @@ class User < ActiveRecord::Base
     end
     return {err: errors.present? ? 'err1' : nil,  errors:  errors}
   end
+
 end

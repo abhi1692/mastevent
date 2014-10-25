@@ -27,6 +27,9 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.log_level = :debug
+
+
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
@@ -34,4 +37,18 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_mailer.default_url_options = {host: 'localhost:3000'}
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    :address =>'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :username => 'Abhinav1692',
+    :password => '@kumarabhinav.1692',
+    :domain => '127.0.0.1:3000',
+    :enable_starttls_auto => true
+  }
 end

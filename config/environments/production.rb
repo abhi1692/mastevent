@@ -42,7 +42,7 @@ Rails.application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :info
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -79,4 +79,18 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = {host: 'www.mastevent.com'}
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    :address =>'smtp.sendgrid.net',
+    :port =>'587',
+    :authentication => :plain,
+    :username => 'Abhinav1692',
+    :password => '@kumarabhinav.1692',
+    :domain => 'mastevent.com',
+    :enable_starttls_auto => true
+  }
 end

@@ -14,7 +14,9 @@ class UserController < ApplicationController
     result = usr.create_update_user(params)
     if result[:err].blank?
       @current_user = result[:usr_obj]
-      set_user_auth_cookies(result)
+      set_user_auth_cookies(result) 
+      sent_res = UserMailer.welcome_email(usr).deliver
+      Rails.logger.info("Welcome mailer sent result:#{sent_res.inspect}")
       redirect_to '/user/more_info'  # Success
     else
       @errors = result[:errors]
