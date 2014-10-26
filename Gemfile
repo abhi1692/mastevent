@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
 # Use mysql as the database for Active Record
-gem 'mysql2', '0.3.16', group: :development
 gem 'pg', '0.17.1', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', ' 4.0.3'
@@ -25,11 +24,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring', group: :development
 
-gem 'pry-rails', group: :development
+gem 'rails_12factor', group: :production
 
-gem 'rails_12factor', group: :production 
+gem 'exception_notification', '4.0.1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -41,4 +39,10 @@ gem 'rails_12factor', group: :production
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development, :test do
+  gem 'spring'
+  gem 'pry-rails'
+  gem 'mysql2', '0.3.16'
+end
 

@@ -1,5 +1,4 @@
-
-#show ul li {  
+#show ul li {
     display: inline;
     } 
 
@@ -16,15 +15,12 @@
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
     text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
     cursor: pointer;
-    
+
     font-size:18px;
     margin:10px;
-   
-    
     } 
 #show ul li a:hover { 
-   
-    background-color:none; 
-    } 
+   background-color:none;
+}
 
    
