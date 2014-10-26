@@ -35,6 +35,14 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.middleware.use ExceptionNotification::Rack,
+                        email: {
+                            email_prefix: GlobalConst::ADMIN_MAIL_PREFIX,
+                            sender_address: '"Exception Notifier" <notifier@mastevent.com>',
+                            exception_recipients: %w(kumarabhinav.1692@gmail.com, abhayait@gmail.com),
+                            ignore_exceptions: ['ActionDispatch::RemoteIp::IpSpoofAttackError'] + ExceptionNotifier.ignored_exceptions,
+                        }
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
