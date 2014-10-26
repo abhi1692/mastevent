@@ -1,0 +1,20 @@
+<%if @user_events[:events].present?%>
+	<%@user_events[:events].each do |ev|%>
+
+
+	    <div id="show">
+	    	<ul>
+	    		<br>
+         <h1 style="font-size:18px;color:black;font-weight:bold"> Event Name: <%=ev.event_name%><h1> <br/>
+
+         <li><a href="/volunteer/<%=ev.id%>">Volunteers</a></li>
+         <li><a href="/event/edit/<%=ev.id%>">Edit Event</a></li>
+
+         </ul>
+        </div>
+        <hr/>
+	<%end%>
+
+<%else%>
+<p>You Have Not Posted Any Event</p>
+<%end%>

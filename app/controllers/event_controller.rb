@@ -21,7 +21,7 @@ class EventController < ApplicationController
   end
 
   def save
-    event = Event.save_event(params)
+    event = Event.save_event(params.merge!(:current_user => @current_user))
     redirect_to action: :edit, id: event.id
   end
 
@@ -36,6 +36,10 @@ class EventController < ApplicationController
      
     @event = Event.where(id: params[:id]).first
 
+  end
+
+  def user_event
+    @user_events =  Event.get_user_events(:user_id => @current_user.id)
   end
 
 end

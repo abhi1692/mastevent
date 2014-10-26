@@ -1,0 +1,29 @@
+<%applicants = @applicants[:users]%>
+
+<% if applicants.present? %>
+    <% applicants.each do |u| %>
+        <div>
+        Name: <%=u.firstname%> <br/>
+        Email: <%=u.email%> <br/>
+        Mobile No: <%=u.mobile_number%> <br/>
+        
+        Bike: <%=u.bike%> <br/>
+
+        User Type: <%=u.user_type%> <br/>
+
+        Gender: <%=u.gender%> <br/>
+
+        Address: <%=u.address%> <br/>
+
+        City: <%=u.city%> <br/>
+
+
+
+
+        
+        </div><hr/>
+
+    <%end%>
+<%else%>
+<p>No Volunteer Found</p>
+<%end%>

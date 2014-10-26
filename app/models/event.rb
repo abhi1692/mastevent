@@ -34,6 +34,7 @@ class Event < ActiveRecord::Base
     event_obj.volunteer_type = params[:volunteer_type].to_i
     event_obj.number_of_days =params[:number_of_days]
     event_obj.bike = params[:bike].to_i
+    event_obj.user_id = params[:current_user].id
     event_obj.save!
     return event_obj
   end
@@ -55,5 +56,12 @@ class Event < ActiveRecord::Base
     et = [params[:et]] if params[:et].present?
     Event.all.where(:status => true).all
   end
+
+  def self.get_user_events(params)
+      return {:events => []} if params[:user_id].blank?
+      events = Event.where(:user_id => params[:user_id]).all
+      return {:events => events}
+  end 
+
 
 end

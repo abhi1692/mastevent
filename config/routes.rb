@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
    get 'description/:id' => 'event#description'
    get 'apply/:event_id' => 'event#apply'
-
-   get 'applicant/:id' => 'event#applicant'
    get 'event/new' => 'event#new'
    match 'event/edit/:id' => 'event#edit', via: [:get]
    post 'event/save/(:id)' => 'event#save'
@@ -15,11 +13,10 @@ Rails.application.routes.draw do
 
   resources 'event', as: :event, controller: 'event' do
     collection do
-
+      get '/user/' => :user_event
     end
     member do
-      get '/' => :index
-      post '/save-design' => :save_design
+      get '/' => :index    
     end
   end
 
@@ -45,10 +42,14 @@ Rails.application.routes.draw do
     end
     member do
       get '/swatches' => :swatches, as: 'swatches'
-      get '/more-collection-products' => 'product#more_collection_products'
-      post '/save-design' => :save_design, as: 'save_design'
-      post '/share-design' => :share_design, as: 'share_design'
-      get '/get-price-and-image' => :get_price_and_image
+    end
+  end
+
+  resources 'volunteer', as: :volunteer, controller: 'applicant' do
+    collection do
+      get '/:id' => :index
+    end
+    member do
     end
   end
 

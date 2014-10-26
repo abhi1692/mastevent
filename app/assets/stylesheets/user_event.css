@@ -1,0 +1,30 @@
+
+#show ul li {  
+    display: inline;
+    } 
+
+#show ul li a { 
+    text-decoration: none; 
+    padding: .1em .1em; 
+    
+    background-color: none;
+    display: inline;
+    color: blue;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    cursor: pointer;
+    
+    font-size:18px;
+    margin:10px;
+   
+    
+    } 
+#show ul li a:hover { 
+   
+    background-color:none; 
+    } 
+
+   
